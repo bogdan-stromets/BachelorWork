@@ -10,21 +10,45 @@ namespace AccountingSystem.Model
     class OrdersModel
     {
         public int id { get; set; }
-        public CartModel cart { get; set; }
+        public List<CartModel> cart { get; set; }
         public DateTime date { get; set; }
         public string order_info { get; set; }
         public bool is_delivered { get; set; }
         public decimal sum { get; set; }
 
+        public OrdersModel()
+        {
+            
+        }
         public OrdersModel(DataRow dr)
         {
             id = int.Parse(dr.ItemArray[0].ToString());
-            cart = new CartModel(this);
             date = DateTime.Parse(dr.ItemArray[2].ToString());
             order_info = dr.ItemArray[4].ToString();
             is_delivered = bool.Parse(dr.ItemArray[3].ToString());
+            cart = new List<CartModel>();
+            CartFill();
+            sum = GetSum();
         }
 
+        private decimal GetSum()
+        {
+            decimal sum = 0;
+            foreach (CartModel cart in cart)
+            {
+                sum += cart.device.price * cart.amount;
+            }
+            return sum;
+        }
 
+        private void CartFill()
+        {
+            DataTable dt = new DB().GetTableData(TableName.cart.ToString());
+            foreach (DataRow dr in dt.Rows)
+            {
+                if (dr.ItemArray[1].ToString() == id.ToString())
+                    cart.Add(new CartModel(dr,this));
+            }
+        }
     }
 }

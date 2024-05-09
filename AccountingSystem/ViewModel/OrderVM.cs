@@ -17,18 +17,12 @@ namespace AccountingSystem.ViewModel
 {
     class OrderVM : ViewModelBase
     {
-        public ICommand OrderCommand { get; set; }
         public ObservableCollection<OrdersModel> Buttons { get; }
         private DataTable dt;
         public DataTable OrdersData
         {
             get { return dt; }
             private set { dt = value; OnPropertyChanged(); }
-        }
-        public void OrderInfo(object obj)
-        {
-            OrdersModel order = obj as OrdersModel;
-            MessageBox.Show($"{order.id} tap");
         }
         public OrderVM()
         {
@@ -39,9 +33,6 @@ namespace AccountingSystem.ViewModel
             {
                 Buttons.Add(new OrdersModel(dr));
             }
-            OrderCommand = new RelayCommand(OrderInfo);
         }
-
-
     }
 }

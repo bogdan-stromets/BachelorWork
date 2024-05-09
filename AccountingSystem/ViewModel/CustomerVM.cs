@@ -5,10 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AccountingSystem.Model;
+using AccountingSystem.Utilities;
 
 namespace AccountingSystem.ViewModel
 {
-    class CustomerVM : Utilities.ViewModelBase
+    class CustomerVM : ViewModelBase
     {
         private EmployeerModel employeer;
         private DataTable dt;

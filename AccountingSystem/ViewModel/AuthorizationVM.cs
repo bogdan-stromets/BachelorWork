@@ -12,7 +12,7 @@ using System.Windows.Input;
 
 namespace AccountingSystem.ViewModel
 {
-    class AuthorizationVM : Utilities.ViewModelBase
+    class AuthorizationVM : ViewModelBase
     {
         public List<AuthorizationModel> data { get; }
         private string login;

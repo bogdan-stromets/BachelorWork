@@ -17,7 +17,7 @@
     <Grid Margin="15" Background="#212529">
         <Grid>
             
-            <TextBlock HorizontalAlignment="Left" Margin="78,10,0,0"
+            <TextBlock HorizontalAlignment="Left" Margin="78,25,0,0"
                        TextWrapping="Wrap" Text="Orders" 
                        VerticalAlignment="Top"
                        Height="38" Width="158"
@@ -28,8 +28,8 @@
                     <ItemsControl ItemsSource="{Binding Buttons}">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
-                                <Menu:Btn Command="{Binding DataContext.OrderCommand, 
-                                          RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" 
+                                <Menu:Btn Command="{Binding DataContext.OrderDetailsCommand, 
+                                          RelativeSource={RelativeSource AncestorType={x:Type Window}}}" 
                                           CommandParameter="{Binding}"
                                           Style="{StaticResource BtnStyleData}" 
                                           HorizontalAlignment="Center" 

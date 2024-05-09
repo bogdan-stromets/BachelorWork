@@ -1,0 +1,114 @@
+﻿<UserControl x:Class="AccountingSystem.View.OrderDetails"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:vm="clr-namespace:AccountingSystem.ViewModel" xmlns:Menu="clr-namespace:AccountingSystem.Utilities"
+             mc:Ignorable="d"
+             d:DesignHeight="600"
+             d:DesignWidth="1000"
+             Style="{StaticResource Page_Style}">
+
+    <UserControl.DataContext>
+        <vm:OrderDetailsVM />
+    </UserControl.DataContext>
+
+
+    <Grid Margin="15" Background="#212529">
+        <Grid>
+
+            <TextBlock HorizontalAlignment="Left" Margin="102,21,0,0"
+                       TextWrapping="Wrap" Text="Order #" 
+                       VerticalAlignment="Top"
+                       Height="38" Width="158"
+                       FontSize="32" FontFamily="Rubik Medium"
+                       Foreground="White"/>
+            <TextBlock HorizontalAlignment="Left" Margin="214,21,0,0"
+                       TextWrapping="Wrap" Text="{Binding Order.id}" 
+                       VerticalAlignment="Top"
+                       Height="38" Width="158"
+                       FontSize="32" FontFamily="Rubik Medium"
+                       Foreground="White"/>
+            <Button Content="←" 
+                Command="{Binding DataContext.OrdersCommand,
+                RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
+                Style="{DynamicResource RoundedButtonStyle}"
+                Background="#39688E"
+                Foreground="White"
+                FontFamily="Rubik-Medium"
+                FontSize="30" Margin="3,0,0,511" HorizontalAlignment="Left" Width="26" Height="38" VerticalAlignment="Bottom"  />
+
+            <TextBlock HorizontalAlignment="Right" Margin="0,21,40,0"
+                       TextWrapping="Wrap" Text="{Binding Order.date}" 
+                       VerticalAlignment="Top"
+                       Height="38" Width="158"
+                       FontSize="32" FontFamily="Rubik Medium"
+                       Foreground="White"/>
+            <TextBlock HorizontalAlignment="Right" Margin="0,21,109,0"
+                       TextWrapping="Wrap" Text="Date: " 
+                       VerticalAlignment="Top"
+                       Height="38" Width="181"
+                       FontSize="32" FontFamily="Rubik Medium"
+                       Foreground="White"/>
+
+            <ScrollViewer VerticalScrollBarVisibility="Hidden" Margin="0,102,0,140">
+                <StackPanel Margin="0,0,0,0" Height="Auto">
+                    <ItemsControl ItemsSource="{Binding Order.cart}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Menu:Btn 
+                                          Style="{StaticResource BtnStyleData}" 
+                                          HorizontalAlignment="Center" 
+                                          VerticalAlignment="Center"
+                                          Width="850">
+                                    <Grid>
+                                        <TextBlock Text="{Binding amount}" Style="{StaticResource Text_Style}" Margin="20,0,0,0"/>
+                                        <TextBlock Text="{Binding device.name}" Style="{StaticResource Text_Style}" Margin="60,0,0,0"/>
+                                        <TextBlock Text="{Binding device.manufacturer.name}" Style="{StaticResource Text_Style}" Margin="250,0,0,0"/>
+                                        <TextBlock Text="{Binding device.category.name}" Style="{StaticResource Text_Style}" TextAlignment="Center" Margin="320,0,0,0" Width="400"/>
+                                        <TextBlock Text="{Binding device.price}" Style="{StaticResource Text_Style}" TextAlignment="Right" Margin="420,0,0,0" Width="400"/>
+
+                                    </Grid>
+                                </Menu:Btn>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
+            </ScrollViewer>
+            <TextBlock HorizontalAlignment="Left" Margin="481,0,0,34"
+                       TextWrapping="Wrap" Text="Total Price: " 
+                       VerticalAlignment="Bottom"
+                       Height="38" Width="158"
+                       FontSize="25" FontFamily="Rubik Medium"
+                       Foreground="White"/>
+            <TextBlock HorizontalAlignment="Left" Margin="609,0,0,34"
+                       TextWrapping="Wrap" Text="{Binding Order.sum,StringFormat={}{0} грн}" 
+                       VerticalAlignment="Bottom"
+                       Height="38" Width="186"
+                       FontSize="25" FontFamily="Rubik Medium"
+                       Foreground="White"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,0,505,24"
+                       TextWrapping="Wrap" Text="{Binding Order.order_info}" 
+                       VerticalAlignment="Bottom"
+                       TextAlignment="Left"
+                       Height="58" Width="450"
+                       FontSize="22" FontFamily="Rubik Medium"
+                       Foreground="White"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,0,789,87"
+                       TextWrapping="Wrap" Text="Address " 
+                       VerticalAlignment="Bottom"
+                       Height="28" Width="158"
+                       FontSize="20" FontFamily="Rubik Medium"
+                       Foreground="White"/>
+            <CheckBox HorizontalAlignment="Left" Margin="869,488,0,0" VerticalAlignment="Top" 
+                      Height="58" Width="91"
+                      Content="{Binding Order.is_delivered}"/>
+            <TextBlock HorizontalAlignment="Right" Margin="0,0,10,87"
+                       TextWrapping="Wrap" Text="Delivered " 
+                       VerticalAlignment="Bottom"
+                       Height="28" Width="91"
+                       FontSize="20" FontFamily="Rubik Medium"
+                       Foreground="White"/>
+        </Grid>
+    </Grid>
+</UserControl>

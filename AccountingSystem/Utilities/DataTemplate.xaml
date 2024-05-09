@@ -18,6 +18,10 @@
 
     <DataTemplate DataType="{x:Type vm:OrderVM}">
         <view:Orders />
+    </DataTemplate>   
+    
+    <DataTemplate DataType="{x:Type vm:OrderDetailsVM}">
+        <view:OrderDetails />
     </DataTemplate>
 
     <DataTemplate DataType="{x:Type vm:TransactionVM}">

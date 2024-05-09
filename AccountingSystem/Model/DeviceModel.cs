@@ -35,6 +35,27 @@ namespace AccountingSystem.Model
             GetCategory(int.Parse(dr.ItemArray[5].ToString()));
         }
 
+        public DeviceModel(int device_id)
+        {
+            dB = new DB();
+            DataTable data = dB.GetTableData(TableName.devices.ToString());
+            foreach (DataRow dr in data.Rows) 
+            {
+                if (dr.ItemArray[0].ToString() == device_id.ToString())
+                {
+                    id = int.Parse(dr.ItemArray[0].ToString());
+                    name = dr.ItemArray[1].ToString();
+                    description = dr.ItemArray[2].ToString();
+                    price = int.Parse(dr.ItemArray[4].ToString());
+                    stock_size = int.Parse(dr.ItemArray[6].ToString());
+                    pictureURL = dr.ItemArray[7].ToString();
+                    GetManufacturer(int.Parse(dr.ItemArray[3].ToString()));
+                    GetCategory(int.Parse(dr.ItemArray[5].ToString()));
+                    break;
+                }
+            }
+        }
+
         private void GetCategory(int id)
         {
             DataTable dt = dB.GetTableData(TableName.categories.ToString());

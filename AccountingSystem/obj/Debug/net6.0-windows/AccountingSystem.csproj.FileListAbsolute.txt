@@ -63,3 +63,5 @@ F:\Study\4 курс\Bachelor work\Project\AccountingSystem\BachelorWork\Accounti
 F:\Study\4 курс\Bachelor work\Project\AccountingSystem\BachelorWork\AccountingSystem\obj\Debug\net6.0-windows\AccountingSystem.pdb
 F:\Study\4 курс\Bachelor work\Project\AccountingSystem\BachelorWork\AccountingSystem\obj\Debug\net6.0-windows\AccountingSystem.genruntimeconfig.cache
 F:\Study\4 курс\Bachelor work\Project\AccountingSystem\BachelorWork\AccountingSystem\obj\Debug\net6.0-windows\ref\AccountingSystem.dll
+F:\Study\4 курс\Bachelor work\Project\AccountingSystem\BachelorWork\AccountingSystem\obj\Debug\net6.0-windows\View\OrderDetails.g.cs
+F:\Study\4 курс\Bachelor work\Project\AccountingSystem\BachelorWork\AccountingSystem\obj\Debug\net6.0-windows\View\OrderDetails.baml

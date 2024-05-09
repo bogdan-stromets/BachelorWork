@@ -11,23 +11,15 @@ namespace AccountingSystem.Model
     {
         public int id { get; set; }
         public OrdersModel order { get; set; }
-        public List<DeviceModel> devices { get; set; }
+        public DeviceModel device { get; set; }
         public int amount { get; set; }
 
-        public CartModel(OrdersModel targetOrder)
+        public CartModel(DataRow dr,OrdersModel order)
         {
-            order = targetOrder;
-            DB dB = new DB();
-            DataTable dt = dB.GetTableData(TableName.cart.ToString());
-
-            foreach (DataRow dr in dt.Rows)
-            {
-                if (int.Parse(dr.ItemArray[1].ToString()) == order.id)
-                {
-                    //devices.Add();
-                }
-            }
-            devices = new List<DeviceModel>();
+            id = int.Parse(dr.ItemArray[0].ToString());
+            this.order = order;
+            device = new DeviceModel(int.Parse(dr.ItemArray[2].ToString()));
+            amount = int.Parse(dr.ItemArray[3].ToString());
         }
     }
 }
