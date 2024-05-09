@@ -15,7 +15,7 @@ using AccountingSystem.Utilities;
 
 namespace AccountingSystem.ViewModel
 {
-    class OrderVM : Utilities.ViewModelBase
+    class OrderVM : ViewModelBase
     {
         public ICommand OrderCommand { get; set; }
         public ObservableCollection<OrdersModel> Buttons { get; }

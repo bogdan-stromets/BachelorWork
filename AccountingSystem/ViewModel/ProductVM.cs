@@ -6,10 +6,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AccountingSystem.Model;
+using AccountingSystem.Utilities;
 
 namespace AccountingSystem.ViewModel
 {
-    class ProductVM : Utilities.ViewModelBase
+    class ProductVM : ViewModelBase
     {
         public ObservableCollection<DeviceModel> devices { get; }
         private DataTable dt;

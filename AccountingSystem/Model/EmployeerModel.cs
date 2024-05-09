@@ -15,6 +15,7 @@ namespace AccountingSystem.Model
         public string surname { get; private set; } 
         public string position { get; private set; }
         public string photoURL { get; private set; }
+        public string fullName { get { return surname + " " + name; } }
 
         public EmployeerModel(DataRow dr)
         {

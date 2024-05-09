@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AccountingSystem.Utilities;
 using System.Windows.Input;
+using AccountingSystem.Utilities;
 
 namespace AccountingSystem.ViewModel
 {

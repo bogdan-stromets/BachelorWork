@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AccountingSystem.Model;
+using AccountingSystem.Utilities;
 
 namespace AccountingSystem.ViewModel
 {
-    class SettingVM : Utilities.ViewModelBase
+    class SettingVM : ViewModelBase
     {
         private readonly PageModel _pageModel;
         public bool Settings

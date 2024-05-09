@@ -30,18 +30,29 @@ namespace AccountingSystem.ViewModel
             get { return password; }
             set { password = value; OnPropertyChanged(); }
         }
+
         private void CheckLogin(object obj)
         {
-            if (data.Exists(x => x.login == login && x.password == password))
+            AuthorizationModel auth = data.Find(x => x.login == login && x.password == password);
+            if (auth != null)
             {
                 //MessageBox.Show("Logged IN :)");
                 new MainWindow().Show();
+                CustomerVM.id_employeer = auth.id;
             }
             else
             {
                 MessageBox.Show("Login or Password incorrect :(");
+                ResetLoginPass();
             }
         }
+
+        private void ResetLoginPass()
+        {
+            Login = string.Empty;
+            Password = string.Empty;
+        }
+
         public AuthorizationVM()
         {
             AuthorizationCommand = new RelayCommand(CheckLogin);

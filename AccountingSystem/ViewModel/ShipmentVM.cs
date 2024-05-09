@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AccountingSystem.Model;
+using AccountingSystem.Utilities;
 
 namespace AccountingSystem.ViewModel
 {
-    class ShipmentVM : Utilities.ViewModelBase
+    class ShipmentVM : ViewModelBase
     {
         private readonly PageModel _pageModel;
         public TimeOnly ShipmentTracking
