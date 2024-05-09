@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="AccountingSystem.View.Orders"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:vm="clr-namespace:AccountingSystem.ViewModel" xmlns:Menu="clr-namespace:AccountingSystem.Utilities"
+             mc:Ignorable="d"
+             d:DesignHeight="600"
+             d:DesignWidth="1000"
+             Style="{StaticResource Page_Style}">
+
+    <UserControl.DataContext>
+        <vm:OrderVM />
+    </UserControl.DataContext>
+
+
+    <Grid Margin="15" Background="#212529">
+        <Grid>
+            
+            <TextBlock HorizontalAlignment="Left" Margin="78,10,0,0"
+                       TextWrapping="Wrap" Text="Orders" 
+                       VerticalAlignment="Top"
+                       Height="38" Width="158"
+                       FontSize="32" FontFamily="Rubik Medium"
+                       Foreground="White"/>
+            <ScrollViewer VerticalScrollBarVisibility="Hidden" Margin="0,100,0,20">
+                <StackPanel Margin="0,0,0,0" Height="Auto">
+                    <ItemsControl ItemsSource="{Binding Buttons}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Menu:Btn Command="{Binding DataContext.OrderCommand, 
+                                          RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" 
+                                          CommandParameter="{Binding}"
+                                          Style="{StaticResource BtnStyleData}" 
+                                          HorizontalAlignment="Center" 
+                                          VerticalAlignment="Center"
+                                          Width="850">
+                                    <Grid>
+                                        <TextBlock Text="#" Style="{StaticResource Text_Style}" TextAlignment="Center" Margin="25,0,0,0"/>
+                                        <TextBlock Text="{Binding id}" Style="{StaticResource Text_Style}" Margin="40,0,0,0"/>
+                                        <TextBlock Text="{Binding date}" Style="{StaticResource Text_Style}" Margin="100,0,0,0"/>
+                                        <TextBlock Text="{Binding order_info}" Style="{StaticResource Text_Style}" TextAlignment="Center" Margin="320,0,0,0" Width="400"/>
+                                        <CheckBox IsChecked="{Binding is_delivered}" Margin="0,15,40,0" IsEnabled="False" HorizontalAlignment="Right"/>
+                                    </Grid>
+                                </Menu:Btn>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</UserControl>
