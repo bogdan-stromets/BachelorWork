@@ -12,15 +12,17 @@
     <UserControl.DataContext>
         <vm:CustomerVM />
     </UserControl.DataContext>
+    <!--// Check In/Out System in Future!! // -->
+        <Grid Margin="15" Background ="#212529">
 
-    <Grid Margin="15" Background ="#212529">
-
-        <StackPanel Margin="70">
+        <StackPanel Margin="32,59,491,105">
+            <!--// Photo //-->
             <Ellipse Width="150" Height="150" Margin="50" HorizontalAlignment="Center">
                 <Ellipse.Fill>
                     <ImageBrush ImageSource="{Binding Employeer.photoURL}" Stretch="UniformToFill"/>
                 </Ellipse.Fill>
             </Ellipse>
+            <!--// Full Name //-->
             <TextBlock Style="{StaticResource ResourceKey=Text_Style}" 
                        Text="{Binding Employeer.fullName}"
                        TextAlignment="Center"
@@ -28,6 +30,7 @@
                        HorizontalAlignment="Center"
                        Margin="-20"
                        Width="387" Height="40"/>
+            <!--// Position //-->
             <TextBlock Style="{StaticResource ResourceKey=Text_Style}" 
                        Text="{Binding Employeer.position}"
                        TextAlignment="Center"
@@ -35,6 +38,35 @@
                        HorizontalAlignment="Center"
                        Margin="40"
                        Width="387" Height="40"/>
+            <!--// Salary //-->
+            <TextBlock Style="{StaticResource ResourceKey=Text_Style}" 
+                       Text="{Binding Employeer.salary,StringFormat=Salary: {0} грн}"
+                       TextAlignment="Center"
+                       FontSize="20"
+                       HorizontalAlignment="Center"
+                       Margin="-20"
+                       Width="387" Height="40"/>
         </StackPanel>
+        <!--// Email //-->
+        <TextBlock Style="{StaticResource ResourceKey=Text_Style}" 
+                       Text="{Binding Employeer.email,StringFormat=Email: {0}}"
+                       TextAlignment="Center"
+                       FontSize="20"
+                       Margin="482,296,0,0"
+                       Width="387" Height="40" VerticalAlignment="Top"/>
+        <TextBlock Style="{StaticResource ResourceKey=Text_Style}" 
+                       Text="Contacts"
+                       TextAlignment="Center"
+                       FontSize="20"
+                       Margin="482,256,0,0"
+                       Width="387" Height="40" VerticalAlignment="Top"/>
+        <!--// Phone Number //-->
+        <TextBlock Style="{StaticResource ResourceKey=Text_Style}" 
+                       Text="{Binding Employeer.phone_number,StringFormat=Phone Number: {0}}"
+                       TextAlignment="Center"
+                       FontSize="20"
+                       HorizontalAlignment="Right"
+                       Margin="0,341,51,0"
+                       Width="387" Height="40" VerticalAlignment="Top"/>
     </Grid>
 </UserControl>
