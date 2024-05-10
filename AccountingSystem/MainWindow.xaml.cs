@@ -30,5 +30,10 @@ namespace AccountingSystem
         {
             Close();
         }
+        private void MoveWindow(object sender, MouseButtonEventArgs e)
+        {
+            if (Mouse.LeftButton == MouseButtonState.Pressed)
+                DragMove();
+        }
     }
 }

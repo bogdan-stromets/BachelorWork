@@ -75,35 +75,36 @@
                     </ItemsControl>
                 </StackPanel>
             </ScrollViewer>
-            <TextBlock HorizontalAlignment="Left" Margin="481,0,0,34"
+            <TextBlock HorizontalAlignment="Left" Margin="479,0,0,34"
                        TextWrapping="Wrap" Text="Total Price: " 
                        VerticalAlignment="Bottom"
                        Height="38" Width="158"
                        FontSize="25" FontFamily="Rubik Medium"
                        Foreground="White"/>
-            <TextBlock HorizontalAlignment="Left" Margin="609,0,0,34"
+            <TextBlock HorizontalAlignment="Left" Margin="607,0,0,34"
                        TextWrapping="Wrap" Text="{Binding Order.sum,StringFormat={}{0} грн}" 
                        VerticalAlignment="Bottom"
                        Height="38" Width="186"
                        FontSize="25" FontFamily="Rubik Medium"
                        Foreground="White"/>
-            <TextBlock HorizontalAlignment="Left" Margin="10,0,505,24"
-                       TextWrapping="Wrap" Text="{Binding Order.order_info}" 
+            <TextBlock HorizontalAlignment="Left" Margin="20,0,0,20"
+                       TextWrapping="Wrap" Text="Stepanky, Cherkassy region, Kozacka street, 63, postcode: 19632" 
                        VerticalAlignment="Bottom"
                        TextAlignment="Left"
-                       Height="58" Width="450"
+                       Height="66" Width="352"
                        FontSize="22" FontFamily="Rubik Medium"
                        Foreground="White"/>
-            <TextBlock HorizontalAlignment="Left" Margin="10,0,789,87"
+            <TextBlock HorizontalAlignment="Left" Margin="117,0,0,96"
                        TextWrapping="Wrap" Text="Address " 
                        VerticalAlignment="Bottom"
+                       TextAlignment="Center"
                        Height="28" Width="158"
-                       FontSize="20" FontFamily="Rubik Medium"
+                       FontSize="18" FontFamily="Rubik Medium"
                        Foreground="White"/>
             <CheckBox HorizontalAlignment="Left" Margin="869,488,0,0" VerticalAlignment="Top" 
                       Height="58" Width="91"
                       Content="{Binding Order.is_delivered}"/>
-            <TextBlock HorizontalAlignment="Right" Margin="0,0,10,87"
+            <TextBlock HorizontalAlignment="Right" Margin="0,0,10,94"
                        TextWrapping="Wrap" Text="Delivered " 
                        VerticalAlignment="Bottom"
                        Height="28" Width="91"
