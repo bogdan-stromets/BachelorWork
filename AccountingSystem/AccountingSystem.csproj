@@ -91,4 +91,10 @@
     <PackageReference Include="MySqlConnector" Version="2.3.7" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="View\ProductDetails.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
 </Project>

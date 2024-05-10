@@ -66,3 +66,5 @@ F:\Study\4 курс\Bachelor work\Project\AccountingSystem\BachelorWork\Accounti
 F:\Study\4 курс\Bachelor work\Project\AccountingSystem\BachelorWork\AccountingSystem\obj\Debug\net6.0-windows\View\OrderDetails.g.cs
 F:\Study\4 курс\Bachelor work\Project\AccountingSystem\BachelorWork\AccountingSystem\obj\Debug\net6.0-windows\View\OrderDetails.baml
 F:\Study\4 курс\Bachelor work\Project\AccountingSystem\BachelorWork\AccountingSystem\obj\Debug\net6.0-windows\Styles\CheckBox.baml
+F:\Study\4 курс\Bachelor work\Project\AccountingSystem\BachelorWork\AccountingSystem\obj\Debug\net6.0-windows\View\ProductDetails.g.cs
+F:\Study\4 курс\Bachelor work\Project\AccountingSystem\BachelorWork\AccountingSystem\obj\Debug\net6.0-windows\View\ProductDetails.baml

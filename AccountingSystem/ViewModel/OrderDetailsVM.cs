@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace AccountingSystem.ViewModel
 {
-    class OrderDetailsVM : ViewModelBase
+    class OrderDetailsVM : Utilities.ViewModelBase
     {
         private static OrdersModel currentOrder;
         public static ObservableCollection<DeviceModel> devices { get; set; }

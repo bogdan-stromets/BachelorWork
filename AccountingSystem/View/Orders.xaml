@@ -16,7 +16,7 @@
 
     <Grid Margin="15" Background="#212529">
         <Grid>
-            
+
             <TextBlock HorizontalAlignment="Left" Margin="78,25,0,0"
                        TextWrapping="Wrap" Text="Orders" 
                        VerticalAlignment="Top"
@@ -40,7 +40,7 @@
                                         <TextBlock Text="{Binding id}" Style="{StaticResource Text_Style}" Margin="40,0,0,0"/>
                                         <TextBlock Text="{Binding date}" Style="{StaticResource Text_Style}" Margin="100,0,0,0"/>
                                         <TextBlock Text="{Binding order_info}" Style="{StaticResource Text_Style}" TextAlignment="Center" Margin="320,0,0,0" Width="400"/>
-                                        <CheckBox IsChecked="{Binding is_delivered}" Margin="0,15,40,0" IsEnabled="False" HorizontalAlignment="Right"/>
+                                        <CheckBox IsChecked="{Binding is_delivered}" Content="🚚" FontSize="15" Style="{StaticResource NewCheckBox}" Margin="808,7,0,7" IsEnabled="False" HorizontalAlignment="Left" Width="32" Height="32"/>
                                     </Grid>
                                 </Menu:Btn>
                             </DataTemplate>
