@@ -25,25 +25,25 @@ namespace AccountingSystem.ViewModel
         private bool ascSort;
 
         #region Header Properties
-        private string header_num = "№", header_address = "Address", header_state = "State", header_order_date = "Order Date";
+        private string header_num = "№", header_address = "Address", header_state = "State", header_order_date = "Order Date", sortPointer = "";
         public string Header_num 
         {
-            get { return header_num; }
+            get { return header_num + sortPointer; }
             set { header_num = value; OnPropertyChanged(); }
         }
         public string Header_address
         {
-            get { return header_address; }
+            get { return header_address + sortPointer; }
             set { header_address = value; OnPropertyChanged(); }
         }        
         public string Header_state
         {
-            get { return header_state; }
+            get { return header_state + sortPointer; }
             set { header_state = value; OnPropertyChanged(); }
         }        
         public string Header_order_date
         {
-            get { return header_order_date; }
+            get { return header_order_date + sortPointer; }
             set { header_order_date = value; OnPropertyChanged(); }
         }
         #endregion
@@ -62,9 +62,9 @@ namespace AccountingSystem.ViewModel
         public OrderVM()
         {
             SortCommand = new RelayCommand(SortType);
-            Init(TableName.orders.ToString());
+            InitVM(TableName.orders.ToString());
         }
-        private void Init(string tableName = "",string command = "", bool sort = false)
+        protected override void InitVM(string tableName = "", string command = "", bool sort = false)
         {
             OrdersData = new DB().GetTableData(tableName,sort,command);
           
@@ -78,12 +78,13 @@ namespace AccountingSystem.ViewModel
                 Buttons.Add(new OrdersModel(dr));
             }
         }
-        public void AscendingSort(string colName) => Init(command: $"SELECT* FROM `{TableName.orders}` ORDER BY `{TableName.orders}`.`{colName}` ASC", sort: true);
+        public void AscendingSort(string colName) => InitVM(command: $"SELECT* FROM `{TableName.orders}` ORDER BY `{TableName.orders}`.`{colName}` ASC", sort: true);
 
-        public void DescendingSort(string colName) => Init(command: $"SELECT* FROM `{TableName.orders}` ORDER BY `{TableName.orders}`.`{colName}` DESC", sort: true);
+        public void DescendingSort(string colName) => InitVM(command: $"SELECT* FROM `{TableName.orders}` ORDER BY `{TableName.orders}`.`{colName}` DESC", sort: true);
        
         public void SortType(object obj)
         {
+            Sort = !Sort;
             if (Sort)
                 AscendingSort(NameConverter(obj.ToString()));
             else

@@ -15,5 +15,6 @@ namespace AccountingSystem.Utilities
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
         }
+        protected virtual void InitVM(string tableName = "", string command = "", bool sort = false) { }
     }
 }

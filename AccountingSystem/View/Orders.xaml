@@ -44,7 +44,7 @@
                        HorizontalAlignment="Stretch"
                         Style="{StaticResource Text_Style}"
                         TextAlignment="Center"
-                        Padding="5">
+                        Padding="8">
                     <TextBlock.InputBindings>
                         <MouseBinding Command="{Binding SortCommand}" MouseAction="LeftClick" CommandParameter="{Binding ElementName=id, Path=Text}"/>
                     </TextBlock.InputBindings>
@@ -59,7 +59,7 @@
                        VerticalAlignment="Stretch"
                        HorizontalAlignment="Stretch" 
                        TextAlignment="Center"
-                       Padding="5">
+                       Padding="8">
                     <TextBlock.InputBindings>
                         <MouseBinding Command="{Binding SortCommand}" MouseAction="LeftClick" CommandParameter="{Binding ElementName=order_date, Path=Text}"/>
                     </TextBlock.InputBindings>
@@ -74,7 +74,7 @@
                     VerticalAlignment="Stretch"
                     HorizontalAlignment="Stretch"
                     TextAlignment="Center"
-                    Padding="5">
+                    Padding="8">
                     <TextBlock.InputBindings>
                         <MouseBinding Command="{Binding SortCommand}" MouseAction="LeftClick" CommandParameter="{Binding ElementName=address, Path=Text}"/>
                     </TextBlock.InputBindings>
@@ -89,7 +89,7 @@
                     VerticalAlignment="Stretch"
                     HorizontalAlignment="Stretch"
                     TextAlignment="Center"
-                    Padding="5">
+                    Padding="8">
                     <TextBlock.InputBindings>
                         <MouseBinding Command="{Binding SortCommand}" MouseAction="LeftClick" CommandParameter="{Binding ElementName=state, Path=Text}"/>
                     </TextBlock.InputBindings>
