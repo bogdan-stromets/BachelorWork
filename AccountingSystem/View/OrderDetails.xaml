@@ -102,6 +102,7 @@
                        Foreground="White"/>
             <CheckBox Style="{StaticResource NewCheckBox}" HorizontalAlignment="Left" Margin="811,463,0,0" VerticalAlignment="Top" 
                       Height="80" Width="80"
+                      Command="{Binding deliverCommand}"
                       Content="🚚"
                       HorizontalContentAlignment="Center"
                       VerticalContentAlignment="Stretch"

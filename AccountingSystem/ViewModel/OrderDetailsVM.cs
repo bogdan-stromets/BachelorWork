@@ -6,19 +6,24 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace AccountingSystem.ViewModel
 {
     class OrderDetailsVM : Utilities.ViewModelBase
     {
         private OrdersModel currentOrder;
+        public ICommand deliverCommand { get; set; }
         public  ObservableCollection<DeviceModel> devices { get; set; }
+        
         public int order_id { get => Order.id; }
         public List<CartModel> order_cart { get => Order.cart; }
         public DateTime order_date { get => Order.date; }
         public string order_info { get => Order.order_info; }
         public bool is_delivered { get => Order.is_delivered; set { Order.is_delivered = value; OnPropertyChanged(); } }
         public decimal order_sum { get => Order.sum; }
+
+
         public OrdersModel Order 
         { 
             get { return currentOrder; }
@@ -27,6 +32,7 @@ namespace AccountingSystem.ViewModel
 
         public OrderDetailsVM()
         {
+            deliverCommand = new RelayCommand(Deliver);
             OrdersModel order = NavigationVM.CurrentObject as OrdersModel;
             Order = new OrdersModel()
             {
@@ -46,6 +52,14 @@ namespace AccountingSystem.ViewModel
             {
                 devices.Add(cart.device);
             }
+        }
+
+        private void Deliver(object obj)
+        {
+            DB dB = new DB();
+            dB.ChangeData(Order.GetUpdateCommand());
+            Order.cart.ForEach(cart => cart.device.stock_size += is_delivered ? -cart.amount : cart.amount);
+            Order.cart.ForEach(cart => dB.ChangeData(cart.device.GetUpdateCommand()));
         }
     }
 }

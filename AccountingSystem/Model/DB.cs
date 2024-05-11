@@ -50,6 +50,16 @@ namespace AccountingSystem.Model
             return dt;
         }
 
+        public void ChangeData(string commandStr)
+        {
+            //UPDATE `devices` SET `name` = 'Rtx 3060', `description` = 'Rtx 3060Rtx 3060Rtx 3060Rtx 3060Rtx 3060Rtx 3060Rtx 3060Rtx 3060Rtx 3060Rtx 3060Rtx 3060Rtx 3060', `id_manufacturer` = '18', `price` = '18500', `amount` = '54', `picture_url` = 'sadssadad' WHERE `devices`.`id_device` = 2;
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            OpenConnection();
+            MySqlCommand command = new MySqlCommand(commandStr, GetConnection());
+            command.ExecuteNonQuery();
+            CloseConnection();
+        }
+
     }
 }
 

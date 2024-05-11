@@ -50,5 +50,10 @@ namespace AccountingSystem.Model
                     cart.Add(new CartModel(dr,this));
             }
         }
+
+        public string GetUpdateCommand()
+        {
+            return $"UPDATE `{TableName.orders}` SET `is_delivered` = '{Convert.ToInt32(is_delivered)}' WHERE `{TableName.orders}`.`id_order` = {id}";
+        }
     }
 }

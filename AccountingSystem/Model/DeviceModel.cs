@@ -78,5 +78,9 @@ namespace AccountingSystem.Model
             manufacturer = manufacturerList.Find(x => x.id == id);
         }
 
+        internal string GetUpdateCommand()
+        {
+            return $"UPDATE `{TableName.devices}` SET `amount` = '{stock_size}' WHERE `{TableName.devices}`.`id_device` = {id}";
+        }
     }
 }
