@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace AccountingSystem.ViewModel
@@ -16,7 +17,6 @@ namespace AccountingSystem.ViewModel
     {
         public List<AuthorizationModel> data { get; }
         private string login;
-        private string password;
         private DataTable dt;
 
         public ICommand AuthorizationCommand { get; set; }
@@ -25,14 +25,10 @@ namespace AccountingSystem.ViewModel
             get { return login; }
             set { login = value; OnPropertyChanged(); }
         }     
-        public string Password
-        {
-            get { return password; }
-            set { password = value; OnPropertyChanged(); }
-        }
 
         private void CheckLogin(object obj)
         {
+            string password = (obj as PasswordBox).Password;
             AuthorizationModel auth = data.Find(x => x.login == login && x.password == password);
             if (auth != null)
             {
@@ -43,14 +39,14 @@ namespace AccountingSystem.ViewModel
             else
             {
                 MessageBox.Show("Login or Password incorrect :(");
-                ResetLoginPass();
+                ResetLoginPass(obj as PasswordBox);
             }
         }
 
-        private void ResetLoginPass()
+        private void ResetLoginPass(PasswordBox password)
         {
             Login = string.Empty;
-            Password = string.Empty;
+            password.Password = string.Empty;
         }
 
         public AuthorizationVM()

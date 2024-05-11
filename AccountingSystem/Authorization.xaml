@@ -25,9 +25,11 @@
             <TextBlock Margin="300,200,0,0" Text="Login" Style="{StaticResource Text_Style}" Height="31" Width="179" VerticalAlignment="Top"/>
             <TextBox Text="{Binding Login}" Margin="300,231,300,306" Padding="6"/>
             <TextBlock Margin="300,285,0,0" Text="Password" Style="{StaticResource Text_Style}" Height="31" Width="179" VerticalAlignment="Top"/>
-            <TextBox Text="{Binding Password}" Margin="300,316,300,221" Padding="6"/>
+            <PasswordBox Name="passBox" Margin="300,316,300,221" Padding="6"/>
             <Button Content="Login" 
                 Command="{Binding AuthorizationCommand}"
+                CommandParameter="{Binding ElementName=passBox}"
+                IsDefault="True"
                 Style="{DynamicResource RoundedButtonStyle}"
                 Background="#FF64CCF1"
                 Foreground="White"
