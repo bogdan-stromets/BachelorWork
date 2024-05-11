@@ -135,5 +135,30 @@
                 </ItemsControl>
             </StackPanel>
         </ScrollViewer>
+
+        <Button 
+            Content="+"
+            Style="{DynamicResource RoundedButtonStyle}" 
+            Margin="693,37,214,486"
+            Background="#39688E"
+            Foreground="White"
+            FontFamily="Rubik-Medium"
+            FontSize="30"/>
+        <Button 
+            Content="-"
+            Style="{DynamicResource RoundedButtonStyle}" 
+            Margin="756,37,151,486"
+            Background="#39688E"
+            Foreground="White"
+            FontFamily="Rubik-Medium"
+            FontSize="30"/>
+        <Button 
+            Content="🔍"
+            Style="{DynamicResource RoundedButtonStyle}" 
+            Margin="818,37,89,486"
+            Background="#39688E"
+            Foreground="White"
+            FontFamily="Rubik-Medium"
+            FontSize="30" RenderTransformOrigin="0.6,-0.447"/>
     </Grid>
 </UserControl>
