@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace AccountingSystem.ViewModel
@@ -57,9 +58,18 @@ namespace AccountingSystem.ViewModel
         private void Deliver(object obj)
         {
             DB dB = new DB();
-            dB.ExecuteSQLCommand(Order.GetUpdateCommand());
-            Order.cart.ForEach(cart => cart.device.stock_size += is_delivered ? -cart.amount : cart.amount);
-            Order.cart.ForEach(cart => dB.ExecuteSQLCommand(cart.device.GetUpdateCommand()));
+            try
+            {
+                Order.cart.ForEach(cart => cart.device.stock_size += is_delivered ? -cart.amount : cart.amount);
+                Order.cart.ForEach(cart => dB.ExecuteSQLCommand(cart.device.GetUpdateCommand()));
+                dB.ExecuteSQLCommand(Order.GetUpdateCommand());
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Not enough products in stock!","Warning!",MessageBoxButton.OK,MessageBoxImage.Warning);
+                Order.cart.ForEach(cart => cart.device.stock_size += cart.amount);
+                is_delivered = false;
+            }
         }
     }
 }
