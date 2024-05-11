@@ -11,20 +11,23 @@ namespace AccountingSystem.ViewModel
 {
     class OrderDetailsVM : Utilities.ViewModelBase
     {
-        private static OrdersModel currentOrder;
-        public static ObservableCollection<DeviceModel> devices { get; set; }
+        private OrdersModel currentOrder;
+        public  ObservableCollection<DeviceModel> devices { get; set; }
+        public int order_id { get => Order.id; }
+        public List<CartModel> order_cart { get => Order.cart; }
+        public DateTime order_date { get => Order.date; }
+        public string order_info { get => Order.order_info; }
+        public bool is_delivered { get => Order.is_delivered; set { Order.is_delivered = value; OnPropertyChanged(); } }
+        public decimal order_sum { get => Order.sum; }
         public OrdersModel Order 
         { 
             get { return currentOrder; }
             set { currentOrder = value; OnPropertyChanged(); }
         }
+
         public OrderDetailsVM()
         {
-        }
-
-
-        public OrderDetailsVM(OrdersModel order)
-        {
+            OrdersModel order = NavigationVM.CurrentObject as OrdersModel;
             Order = new OrdersModel()
             {
                 id = order.id,

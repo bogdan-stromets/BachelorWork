@@ -17,7 +17,7 @@ namespace AccountingSystem.ViewModel
             get { return _currentView; }
             set { _currentView = value; OnPropertyChanged(); }
         }
-
+        public static object CurrentObject { get; set; }
         public ICommand HomeCommand { get; set; }
         public ICommand CustomersCommand { get; set; }
         public ICommand ProductsCommand { get; set; }
@@ -31,9 +31,17 @@ namespace AccountingSystem.ViewModel
         private void Home(object obj) => CurrentView = new HomeVM();
         private void Customer(object obj) => CurrentView = new CustomerVM();
         private void Product(object obj) => CurrentView = new ProductVM();
-        private void ProductDetails(object obj) => CurrentView = new ProductDetailsVM((obj as DeviceModel));
         private void Order(object obj) => CurrentView = new OrderVM();
-        private void OrderDetails(object obj) => CurrentView = new OrderDetailsVM(obj as OrdersModel);
+        private void ProductDetails(object obj) 
+        {
+            CurrentObject = obj;
+            CurrentView = new ProductDetailsVM();
+        }
+        private void OrderDetails(object obj)  
+        {
+            CurrentObject = obj;
+            CurrentView = new OrderDetailsVM();
+        }
         private void Transaction(object obj) => CurrentView = new TransactionVM();
         private void Shipment(object obj) => CurrentView = new ShipmentVM();
         private void Setting(object obj) => CurrentView = new SettingVM();

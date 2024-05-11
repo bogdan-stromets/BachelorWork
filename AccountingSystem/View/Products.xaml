@@ -6,7 +6,7 @@
              xmlns:vm="clr-namespace:AccountingSystem.ViewModel" xmlns:Menu="clr-namespace:AccountingSystem.Utilities"
              mc:Ignorable="d"
              d:DesignHeight="600"
-             d:DesignWidth="1000"
+             d:DesignWidth="962"
              Style="{StaticResource Page_Style}">
 
     <UserControl.DataContext>
@@ -14,13 +14,83 @@
     </UserControl.DataContext>
 
     <Grid Margin="15" Background="#212529">
-        <TextBlock HorizontalAlignment="Left" Margin="78,10,0,0"
+        <!-- // Header // -->
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="102" />
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="428"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="41"/>
+                <ColumnDefinition Width="59" />
+                <ColumnDefinition Width="187"/>
+                <ColumnDefinition Width="233"/>
+                <ColumnDefinition Width="281"/>
+                <ColumnDefinition Width="90"/>
+                <ColumnDefinition Width="79"/>
+
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="№" 
+                       Grid.Row="1" Grid.Column="1"
+                       Background="#1C3447"
+                       Style="{StaticResource Text_Style}"
+                       Margin="0"
+                       VerticalAlignment="Stretch"
+                       HorizontalAlignment="Stretch"
+                       TextAlignment="Center"
+                       Padding="5"
+                       />
+            <TextBlock Text="Name" 
+                       Grid.Row="1" Grid.Column="2"
+                       Background="#1C3447"
+                       Style="{StaticResource Text_Style}"
+                       Margin="0"
+                       VerticalAlignment="Stretch"
+                       HorizontalAlignment="Stretch" 
+                       TextAlignment="Center"
+                       Padding="5,5,60,5"
+                       />
+            <TextBlock Text="Manufacturer" 
+                       Grid.Row="1" Grid.Column="3"
+                       Background="#1C3447"
+                       Style="{StaticResource Text_Style}"
+                       Margin="0"
+                       VerticalAlignment="Stretch"
+                       HorizontalAlignment="Stretch" 
+                       TextAlignment="Center"
+                        Padding="5"
+                       />
+            <TextBlock Text="Category" 
+                       Grid.Row="1" Grid.Column="4"
+                       Background="#1C3447"
+                       Style="{StaticResource Text_Style}"
+                       Margin="0"
+                       VerticalAlignment="Stretch"
+                       HorizontalAlignment="Stretch"
+                       TextAlignment="Center"
+                       Padding="5" Grid.ColumnSpan="1"
+                       />
+            <TextBlock Text="Stock" 
+                       Grid.Row="1" Grid.Column="5"
+                       Background="#1C3447"
+                       Style="{StaticResource Text_Style}"
+                       Margin="0"
+                       VerticalAlignment="Stretch"
+                       HorizontalAlignment="Stretch"
+                       TextAlignment="Center"
+                       Padding="5"
+                       />
+            <TextBlock HorizontalAlignment="Left" Margin="31,0,0,0"
                        TextWrapping="Wrap" Text="Products" 
-                       VerticalAlignment="Top"
+                       VerticalAlignment="Center"
                        Height="38" Width="158"
                        FontSize="32" FontFamily="Rubik Medium"
-                       Foreground="White"/>
-        <ScrollViewer VerticalScrollBarVisibility="Hidden" Margin="0,100,0,20">
+                       Foreground="White" Grid.ColumnSpan="2" Grid.Column="1"/>
+
+        </Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Hidden" Margin="0,141,0,39">
             <StackPanel Margin="0,0,0,0" Height="Auto">
                 <ItemsControl ItemsSource="{Binding devices}">
                     <ItemsControl.ItemTemplate>
@@ -30,8 +100,8 @@
                                     <TextBlock Text="#" Style="{StaticResource Text_Style}" TextAlignment="Center" Margin="25,0,0,0"/>
                                     <TextBlock Text="{Binding id}" Style="{StaticResource Text_Style}" TextAlignment="Center" Margin="40,0,0,0"/>
                                     <TextBlock Text="{Binding name}" Style="{StaticResource Text_Style}" TextAlignment="Center" Margin="100,0,0,0"/>
-                                    <TextBlock Text="{Binding manufacturer.name}" Style="{StaticResource Text_Style}" TextAlignment="Center" Margin="0,0,470,0" HorizontalAlignment="Right"/>
-                                    <TextBlock Text="{Binding category.name}" Style="{StaticResource Text_Style}" TextAlignment="Center" Margin="0,0,150,0" HorizontalAlignment="Right"/>
+                                    <TextBlock Text="{Binding manufacturer.name}" Style="{StaticResource Text_Style}" TextAlignment="Center" Margin="335,0,0,0" HorizontalAlignment="Left"/>
+                                    <TextBlock Text="{Binding category.name}" Style="{StaticResource Text_Style}" TextAlignment="Center" Margin="540,0,0,0" HorizontalAlignment="Left"/>
                                     <TextBlock Text="{Binding stock_size}" Style="{StaticResource Text_Style}" TextAlignment="Center" Margin="0,0,30,0" HorizontalAlignment="Right"/>
                                 </Grid>
                             </Menu:Btn>

@@ -19,6 +19,7 @@ namespace AccountingSystem.ViewModel
     {
         public ObservableCollection<OrdersModel> Buttons { get; }
         private DataTable dt;
+
         public DataTable OrdersData
         {
             get { return dt; }

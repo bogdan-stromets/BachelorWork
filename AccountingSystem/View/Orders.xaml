@@ -6,7 +6,7 @@
              xmlns:vm="clr-namespace:AccountingSystem.ViewModel" xmlns:Menu="clr-namespace:AccountingSystem.Utilities"
              mc:Ignorable="d"
              d:DesignHeight="600"
-             d:DesignWidth="1000"
+             d:DesignWidth="962"
              Style="{StaticResource Page_Style}">
 
     <UserControl.DataContext>
@@ -14,16 +14,74 @@
     </UserControl.DataContext>
 
 
-    <Grid Margin="15" Background="#212529">
+    <Grid Margin="0,15,0,15" Background="#212529">
         <Grid>
+            <!-- // Header // -->
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="102" />
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="428"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="55"/>
+                    <ColumnDefinition Width="73" />
+                    <ColumnDefinition Width="188"/>
+                    <ColumnDefinition Width="485"/>
+                    <ColumnDefinition Width="104"/>
+                    <ColumnDefinition Width="65"/>
 
-            <TextBlock HorizontalAlignment="Left" Margin="78,25,0,0"
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="№" 
+                       Grid.Row="1" Grid.Column="1"
+                       Background="#1C3447"
+                       Style="{StaticResource Text_Style}"
+                       Margin="0"
+                       VerticalAlignment="Stretch"
+                       HorizontalAlignment="Stretch"
+                       TextAlignment="Center"
+                       Padding="5"
+                       />
+                <TextBlock Text="Order Date" 
+                       Grid.Row="1" Grid.Column="2"
+                       Background="#1C3447"
+                       Style="{StaticResource Text_Style}"
+                       Margin="0"
+                       VerticalAlignment="Stretch"
+                       HorizontalAlignment="Stretch" 
+                       TextAlignment="Center"
+                       Padding="5"
+                       />
+                <TextBlock Text="Address" 
+                       Grid.Row="1" Grid.Column="3"
+                       Background="#1C3447"
+                       Style="{StaticResource Text_Style}"
+                       Margin="0"
+                       VerticalAlignment="Stretch"
+                       HorizontalAlignment="Stretch"
+                       TextAlignment="Center"
+                       Padding="5"
+                       />
+                <TextBlock Text="State" 
+                       Grid.Row="1" Grid.Column="4"
+                       Background="#1C3447"
+                       Style="{StaticResource Text_Style}"
+                       Margin="0"
+                       VerticalAlignment="Stretch"
+                       HorizontalAlignment="Stretch"
+                       TextAlignment="Center"
+                       Padding="5"
+                       />
+                <TextBlock HorizontalAlignment="Left" Margin="31,0,0,0"
                        TextWrapping="Wrap" Text="Orders" 
-                       VerticalAlignment="Top"
+                       VerticalAlignment="Center"
                        Height="38" Width="158"
                        FontSize="32" FontFamily="Rubik Medium"
-                       Foreground="White"/>
-            <ScrollViewer VerticalScrollBarVisibility="Hidden" Margin="0,100,0,20">
+                       Foreground="White" Grid.ColumnSpan="2" Grid.Column="1"/>
+
+            </Grid>
+            <ScrollViewer VerticalScrollBarVisibility="Hidden" Margin="0,141,0,39">
                 <StackPanel Margin="0,0,0,0" Height="Auto">
                     <ItemsControl ItemsSource="{Binding Buttons}">
                         <ItemsControl.ItemTemplate>
@@ -36,11 +94,10 @@
                                           VerticalAlignment="Center"
                                           Width="850">
                                     <Grid>
-                                        <TextBlock Text="#" Style="{StaticResource Text_Style}" TextAlignment="Center" Margin="25,0,0,0"/>
-                                        <TextBlock Text="{Binding id}" Style="{StaticResource Text_Style}" Margin="40,0,0,0"/>
-                                        <TextBlock Text="{Binding date}" Style="{StaticResource Text_Style}" Margin="100,0,0,0"/>
-                                        <TextBlock Text="{Binding order_info}" Style="{StaticResource Text_Style}" TextAlignment="Center" Margin="320,0,0,0" Width="400"/>
-                                        <CheckBox IsChecked="{Binding is_delivered}" Content="🚚" FontSize="15" Style="{StaticResource NewCheckBox}" Margin="808,7,0,7" IsEnabled="False" HorizontalAlignment="Left" Width="32" Height="32"/>
+                                        <TextBlock Text="{Binding id,StringFormat=# {0}}" Style="{StaticResource Text_Style}" Margin="27,0,0,0" Grid.Column="1"/>
+                                        <TextBlock Text="{Binding date}" Style="{StaticResource Text_Style}" Margin="92,0,0,0" Grid.Column="1"/>
+                                        <TextBlock Text="{Binding order_info}" Style="{StaticResource Text_Style}" TextAlignment="Center" Margin="312,0,0,0" Width="400" Grid.Column="1"/>
+                                        <CheckBox IsChecked="{Binding is_delivered}" Content="🚚" FontSize="15" Style="{StaticResource NewCheckBox}" Margin="787,9,0,9" IsEnabled="False" HorizontalAlignment="Left" Width="32" Height="32" Grid.Column="1"/>
                                     </Grid>
                                 </Menu:Btn>
                             </DataTemplate>

@@ -24,7 +24,7 @@
                        FontSize="32" FontFamily="Rubik Medium"
                        Foreground="White"/>
             <TextBlock HorizontalAlignment="Left" Margin="214,21,0,0"
-                       TextWrapping="Wrap" Text="{Binding Order.id}" 
+                       TextWrapping="Wrap" Text="{Binding order_id}" 
                        VerticalAlignment="Top"
                        Height="38" Width="158"
                        FontSize="32" FontFamily="Rubik Medium"
@@ -53,7 +53,7 @@
 
             <ScrollViewer VerticalScrollBarVisibility="Hidden" Margin="0,102,0,182">
                 <StackPanel Margin="0,0,0,0" Height="Auto">
-                    <ItemsControl ItemsSource="{Binding Order.cart}">
+                    <ItemsControl ItemsSource="{Binding order_cart}">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
                                 <Menu:Btn 
@@ -82,13 +82,13 @@
                        FontSize="30" FontFamily="Rubik Medium"
                        Foreground="White"/>
             <TextBlock HorizontalAlignment="Left" Margin="539,0,0,48"
-                       TextWrapping="Wrap" Text="{Binding Order.sum,StringFormat={}{0} грн}" 
+                       TextWrapping="Wrap" Text="{Binding order_sum,StringFormat={}{0} грн}" 
                        VerticalAlignment="Bottom"
                        Height="38" Width="186"
                        FontSize="30" FontFamily="Rubik Medium"
                        Foreground="White"/>
             <TextBlock HorizontalAlignment="Left" Margin="20,0,0,34"
-                       TextWrapping="Wrap" Text="{Binding Order.order_info}" 
+                       TextWrapping="Wrap" Text="{Binding order_info}" 
                        VerticalAlignment="Bottom"
                        TextAlignment="Left"
                        Height="66" Width="352"
@@ -105,7 +105,7 @@
                       Content="🚚"
                       HorizontalContentAlignment="Center"
                       VerticalContentAlignment="Stretch"
-                      IsChecked="{Binding Order.is_delivered}"/>
+                      IsChecked="{Binding is_delivered}"/>
             <TextBlock HorizontalAlignment="Left" Margin="805,416,0,0"
                        TextWrapping="Wrap" Text="Delivered " 
                        VerticalAlignment="Top"
