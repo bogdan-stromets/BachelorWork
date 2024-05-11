@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 
 namespace AccountingSystem.Model
 {
@@ -37,23 +38,22 @@ namespace AccountingSystem.Model
 
         public MySqlConnection GetConnection() { return connection; }
 
-        public DataTable GetTableData(string tableName)
+        public DataTable GetTableData(string tableName = "", bool sort = false, string commandStr = "")
         {
+            commandStr = !sort ? $"SELECT * FROM `{tableName}`" : commandStr;
+
             DataTable dt = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter();
             OpenConnection();
-            MySqlCommand command = new MySqlCommand($"SELECT * FROM `{tableName}`", GetConnection());
+            MySqlCommand command = new MySqlCommand(commandStr, GetConnection());
             adapter.SelectCommand = command;
             adapter.Fill(dt);
             CloseConnection();
-
             return dt;
         }
 
-        public void ChangeData(string commandStr)
+        public void ExecuteSQLCommand(string commandStr)
         {
-            //UPDATE `devices` SET `name` = 'Rtx 3060', `description` = 'Rtx 3060Rtx 3060Rtx 3060Rtx 3060Rtx 3060Rtx 3060Rtx 3060Rtx 3060Rtx 3060Rtx 3060Rtx 3060Rtx 3060', `id_manufacturer` = '18', `price` = '18500', `amount` = '54', `picture_url` = 'sadssadad' WHERE `devices`.`id_device` = 2;
-            MySqlDataAdapter adapter = new MySqlDataAdapter();
             OpenConnection();
             MySqlCommand command = new MySqlCommand(commandStr, GetConnection());
             command.ExecuteNonQuery();

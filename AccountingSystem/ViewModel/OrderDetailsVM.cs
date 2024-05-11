@@ -57,9 +57,9 @@ namespace AccountingSystem.ViewModel
         private void Deliver(object obj)
         {
             DB dB = new DB();
-            dB.ChangeData(Order.GetUpdateCommand());
+            dB.ExecuteSQLCommand(Order.GetUpdateCommand());
             Order.cart.ForEach(cart => cart.device.stock_size += is_delivered ? -cart.amount : cart.amount);
-            Order.cart.ForEach(cart => dB.ChangeData(cart.device.GetUpdateCommand()));
+            Order.cart.ForEach(cart => dB.ExecuteSQLCommand(cart.device.GetUpdateCommand()));
         }
     }
 }

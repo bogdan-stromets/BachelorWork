@@ -33,17 +33,25 @@
 
                 </Grid.ColumnDefinitions>
 
-                <TextBlock Text="№" 
+
+                <TextBlock 
+                        x:Name="id"
+                        Text="{Binding Header_num}"  
                        Grid.Row="1" Grid.Column="1"
                        Background="#1C3447"
-                       Style="{StaticResource Text_Style}"
                        Margin="0"
                        VerticalAlignment="Stretch"
                        HorizontalAlignment="Stretch"
-                       TextAlignment="Center"
-                       Padding="5"
-                       />
-                <TextBlock Text="Order Date" 
+                        Style="{StaticResource Text_Style}"
+                        TextAlignment="Center"
+                        Padding="5">
+                    <TextBlock.InputBindings>
+                        <MouseBinding Command="{Binding SortCommand}" MouseAction="LeftClick" CommandParameter="{Binding ElementName=id, Path=Text}"/>
+                    </TextBlock.InputBindings>
+                </TextBlock>
+                <TextBlock 
+                       x:Name="order_date" 
+                       Text="{Binding Header_order_date}" 
                        Grid.Row="1" Grid.Column="2"
                        Background="#1C3447"
                        Style="{StaticResource Text_Style}"
@@ -51,28 +59,41 @@
                        VerticalAlignment="Stretch"
                        HorizontalAlignment="Stretch" 
                        TextAlignment="Center"
-                       Padding="5"
-                       />
-                <TextBlock Text="Address" 
-                       Grid.Row="1" Grid.Column="3"
-                       Background="#1C3447"
-                       Style="{StaticResource Text_Style}"
-                       Margin="0"
-                       VerticalAlignment="Stretch"
-                       HorizontalAlignment="Stretch"
-                       TextAlignment="Center"
-                       Padding="5"
-                       />
-                <TextBlock Text="State" 
-                       Grid.Row="1" Grid.Column="4"
-                       Background="#1C3447"
-                       Style="{StaticResource Text_Style}"
-                       Margin="0"
-                       VerticalAlignment="Stretch"
-                       HorizontalAlignment="Stretch"
-                       TextAlignment="Center"
-                       Padding="5"
-                       />
+                       Padding="5">
+                    <TextBlock.InputBindings>
+                        <MouseBinding Command="{Binding SortCommand}" MouseAction="LeftClick" CommandParameter="{Binding ElementName=order_date, Path=Text}"/>
+                    </TextBlock.InputBindings>
+                </TextBlock>
+                <TextBlock 
+                    x:Name="address"
+                    Text="{Binding Header_address}" 
+                    Grid.Row="1" Grid.Column="3"
+                    Background="#1C3447"
+                    Style="{StaticResource Text_Style}"
+                    Margin="0"
+                    VerticalAlignment="Stretch"
+                    HorizontalAlignment="Stretch"
+                    TextAlignment="Center"
+                    Padding="5">
+                    <TextBlock.InputBindings>
+                        <MouseBinding Command="{Binding SortCommand}" MouseAction="LeftClick" CommandParameter="{Binding ElementName=address, Path=Text}"/>
+                    </TextBlock.InputBindings>
+                </TextBlock>
+                <TextBlock 
+                    x:Name="state"
+                    Text="{Binding Header_state}" 
+                    Grid.Row="1" Grid.Column="4"
+                    Background="#1C3447"
+                    Style="{StaticResource Text_Style}"
+                    Margin="0"
+                    VerticalAlignment="Stretch"
+                    HorizontalAlignment="Stretch"
+                    TextAlignment="Center"
+                    Padding="5">
+                    <TextBlock.InputBindings>
+                        <MouseBinding Command="{Binding SortCommand}" MouseAction="LeftClick" CommandParameter="{Binding ElementName=state, Path=Text}"/>
+                    </TextBlock.InputBindings>
+                </TextBlock>
                 <TextBlock HorizontalAlignment="Left" Margin="31,0,0,0"
                        TextWrapping="Wrap" Text="Orders" 
                        VerticalAlignment="Center"
