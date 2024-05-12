@@ -27,16 +27,16 @@ namespace AccountingSystem.ViewModel
         private string searchText;
 
         #region Header Properties
-        private string header_num = "№", header_address = "Address", header_state = "State", header_order_date = "Order Date", sortPointer = "";
+        private string header_num = "№", header_customer = "Customer", header_state = "State", header_order_date = "Order Date", sortPointer = "";
         public string Header_num 
         {
             get { return header_num + sortPointer; }
             set { header_num = value; OnPropertyChanged(); }
         }
-        public string Header_address
+        public string Header_customer
         {
-            get { return header_address + sortPointer; }
-            set { header_address = value; OnPropertyChanged(); }
+            get { return header_customer; }
+            set { header_customer = value; OnPropertyChanged(); }
         }        
         public string Header_state
         {
@@ -72,7 +72,7 @@ namespace AccountingSystem.ViewModel
             InitVM(TableName.orders.ToString());
         }
 
-        private void InitCommands()
+        protected override void InitCommands()
         {
             SortCommand = new RelayCommand(SortType);
             SearchCommand = new RelayCommand(Search);
@@ -111,12 +111,12 @@ namespace AccountingSystem.ViewModel
             {
                 "№" => "id_order",
                 "Order Date" => "date",
-                "Address" => "order_info",
+                "Customer" => "customer_full_name",
                 "State" => "is_delivered",
                 _ => targetValue,
             };
         }
 
-        public void Search(object obj) => InitVM(command: SearchStringCommand(TableName.orders, SearchText, new string[] { "id_order", "date", "order_info", "is_delivered" }), sort: true);
+        public void Search(object obj) => InitVM(command: SearchStringCommand(TableName.orders, SearchText, new string[] { "id_order", "order_info", "customer_full_name", "is_delivered"}), sort: true);
     }
 }

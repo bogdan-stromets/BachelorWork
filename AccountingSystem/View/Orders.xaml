@@ -60,9 +60,9 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="55"/>
                     <ColumnDefinition Width="73" />
-                    <ColumnDefinition Width="188"/>
-                    <ColumnDefinition Width="485"/>
-                    <ColumnDefinition Width="104"/>
+                    <ColumnDefinition Width="225"/>
+                    <ColumnDefinition Width="465"/>
+                    <ColumnDefinition Width="85"/>
                     <ColumnDefinition Width="65"/>
 
                 </Grid.ColumnDefinitions>
@@ -99,8 +99,8 @@
                     </TextBlock.InputBindings>
                 </TextBlock>
                 <TextBlock 
-                    x:Name="address"
-                    Text="{Binding Header_address}" 
+                    x:Name="customer"
+                    Text="{Binding Header_customer}" 
                     Grid.Row="1" Grid.Column="3"
                     Background="#1C3447"
                     Style="{StaticResource Text_Style}"
@@ -110,7 +110,7 @@
                     TextAlignment="Center"
                     Padding="8">
                     <TextBlock.InputBindings>
-                        <MouseBinding Command="{Binding SortCommand}" MouseAction="LeftClick" CommandParameter="{Binding ElementName=address, Path=Text}"/>
+                        <MouseBinding Command="{Binding SortCommand}" MouseAction="LeftClick" CommandParameter="{Binding ElementName=customer, Path=Text}"/>
                     </TextBlock.InputBindings>
                 </TextBlock>
                 <TextBlock 
@@ -123,7 +123,7 @@
                     VerticalAlignment="Stretch"
                     HorizontalAlignment="Stretch"
                     TextAlignment="Center"
-                    Padding="8">
+                    Padding="0,8,10,0">
                     <TextBlock.InputBindings>
                         <MouseBinding Command="{Binding SortCommand}" MouseAction="LeftClick" CommandParameter="{Binding ElementName=state, Path=Text}"/>
                     </TextBlock.InputBindings>
@@ -150,8 +150,8 @@
                                           Width="850">
                                     <Grid>
                                         <TextBlock Text="{Binding id,StringFormat=# {0}}" Style="{StaticResource Text_Style}" Margin="27,0,0,0" Grid.Column="1"/>
-                                        <TextBlock Text="{Binding date}" Style="{StaticResource Text_Style}" Margin="92,0,0,0" Grid.Column="1"/>
-                                        <TextBlock Text="{Binding order_info}" Style="{StaticResource Text_Style}" TextAlignment="Center" Margin="312,0,0,0" Width="400" Grid.Column="1"/>
+                                        <TextBlock Text="{Binding date}" Style="{StaticResource Text_Style}" Margin="140,0,0,0" Grid.Column="1"/>
+                                        <TextBlock Text="{Binding customer_full_name}" Style="{StaticResource Text_Style}" TextAlignment="Center" Margin="342,0,0,0" Width="400" Grid.Column="1"/>
                                         <CheckBox IsChecked="{Binding is_delivered}" Content="🚚" FontSize="15" Style="{StaticResource NewCheckBox}" Margin="787,9,0,9" IsEnabled="False" HorizontalAlignment="Left" Width="32" Height="32" Grid.Column="1"/>
                                     </Grid>
                                 </Menu:Btn>

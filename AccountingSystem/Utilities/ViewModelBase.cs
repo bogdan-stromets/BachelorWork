@@ -17,6 +17,7 @@ namespace AccountingSystem.Utilities
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
         }
         protected virtual void InitVM(string tableName = "", string command = "", bool sort = false) { }
+        protected virtual void InitCommands() { }
         protected virtual string SearchStringCommand(TableName table, string searchText, params string[] fields)
         {
             string command = $"SELECT * FROM {table} WHERE";

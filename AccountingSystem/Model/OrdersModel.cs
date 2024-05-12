@@ -16,6 +16,8 @@ namespace AccountingSystem.Model
         public string order_info { get; set; }
         public bool is_delivered { get; set; }
         public decimal sum { get; set; }
+        public string customer_full_name { get; set; }
+        public string customer_phone_number { get; set; }
 
         public OrdersModel()
         {
@@ -28,6 +30,8 @@ namespace AccountingSystem.Model
             order_info = dr.ItemArray[4].ToString();
             is_delivered = bool.Parse(dr.ItemArray[3].ToString());
             cart = new List<CartModel>();
+            customer_full_name = dr.ItemArray[5].ToString();
+            customer_phone_number = dr.ItemArray[6].ToString();
             CartFill();
             sum = GetSum();
         }

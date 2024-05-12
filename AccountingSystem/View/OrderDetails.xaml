@@ -16,14 +16,93 @@
 
     <Grid Margin="15" Background="#212529">
         <Grid>
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="102" />
+                    <RowDefinition Height="39"/>
+                    <RowDefinition Height="429"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="38"/>
+                    <ColumnDefinition Width="50" />
+                    <ColumnDefinition Width="129"/>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="258"/>
+                    <ColumnDefinition Width="213"/>
+                    <ColumnDefinition Width="0"/>
 
-            <TextBlock HorizontalAlignment="Left" Margin="102,21,0,0"
+                </Grid.ColumnDefinitions>
+
+                <TextBlock 
+                       x:Name="id"
+                       Text="#" 
+                       Grid.Row="1" Grid.Column="1"
+                       Background="#1C3447"
+                       Style="{StaticResource Text_Style}"
+                       Margin="0"
+                       VerticalAlignment="Stretch"
+                       HorizontalAlignment="Stretch"
+                       TextAlignment="Center"
+                       Padding="5">
+                </TextBlock>
+                <TextBlock 
+                       x:Name="name"
+                       Text="Name" 
+                       Grid.Row="1" Grid.Column="2"
+                       Background="#1C3447"
+                       Style="{StaticResource Text_Style}"
+                       Margin="0,0,0,0"
+                       VerticalAlignment="Stretch"
+                       HorizontalAlignment="Stretch" 
+                       TextAlignment="Center"
+                       Padding="5,5,60,5">
+                </TextBlock>
+                <TextBlock 
+                       x:Name="manufacturer"
+                       Text="Manufacturer" 
+                       Grid.Row="1" Grid.Column="3"
+                       Background="#1C3447"
+                       Style="{StaticResource Text_Style}"
+                       Margin="0,0,0,0"
+                       VerticalAlignment="Stretch"
+                       HorizontalAlignment="Stretch" 
+                       TextAlignment="Center"
+                        Padding="5">
+                </TextBlock>
+                <TextBlock 
+                       x:Name="category"
+                       Text="Category" 
+                       Grid.Row="1" Grid.Column="4"
+                       Background="#1C3447"
+                       Style="{StaticResource Text_Style}"
+                       Margin="0,0,0,0"
+                       VerticalAlignment="Stretch"
+                       HorizontalAlignment="Stretch"
+                       TextAlignment="Center"
+                       Padding="5" >
+                </TextBlock>
+                <TextBlock 
+                       x:Name="price"
+                       Text="Price" 
+                       Grid.Row="1" Grid.Column="5"
+                       Background="#1C3447"
+                       Style="{StaticResource Text_Style}"
+                       Margin="0,0,0,0"
+                       VerticalAlignment="Stretch"
+                       HorizontalAlignment="Stretch"
+                       TextAlignment="Right"
+                       Padding="0,5,38,0">
+
+                </TextBlock>
+
+            </Grid>
+            <TextBlock HorizontalAlignment="Left" Margin="99,29,0,0"
                        TextWrapping="Wrap" Text="Order #" 
                        VerticalAlignment="Top"
                        Height="38" Width="158"
                        FontSize="32" FontFamily="Rubik Medium"
                        Foreground="White"/>
-            <TextBlock HorizontalAlignment="Left" Margin="214,21,0,0"
+            <TextBlock HorizontalAlignment="Left" Margin="214,28,0,0"
                        TextWrapping="Wrap" Text="{Binding order_id}" 
                        VerticalAlignment="Top"
                        Height="38" Width="158"
@@ -36,22 +115,22 @@
                 Background="#39688E"
                 Foreground="White"
                 FontFamily="Rubik-Medium"
-                FontSize="30" Margin="10,0,0,511" HorizontalAlignment="Left" Width="26" Height="38" VerticalAlignment="Bottom"  />
+                FontSize="30" Margin="10,0,0,503" HorizontalAlignment="Left" Width="26" Height="38" VerticalAlignment="Bottom" RenderTransformOrigin="0.739,-0.399"  />
 
-            <TextBlock HorizontalAlignment="Right" Margin="0,21,40,0"
+            <TextBlock HorizontalAlignment="Right" Margin="0,28,40,0"
                        TextWrapping="Wrap" Text="{Binding Order.date}" 
                        VerticalAlignment="Top"
                        Height="38" Width="158"
                        FontSize="32" FontFamily="Rubik Medium"
                        Foreground="White"/>
-            <TextBlock HorizontalAlignment="Right" Margin="0,21,109,0"
+            <TextBlock HorizontalAlignment="Right" Margin="0,28,109,0"
                        TextWrapping="Wrap" Text="Date: " 
                        VerticalAlignment="Top"
                        Height="38" Width="181"
                        FontSize="32" FontFamily="Rubik Medium"
                        Foreground="White"/>
 
-            <ScrollViewer VerticalScrollBarVisibility="Hidden" Margin="0,102,0,182">
+            <ScrollViewer VerticalScrollBarVisibility="Hidden" Margin="0,142,0,142">
                 <StackPanel Margin="0,0,0,0" Height="Auto">
                     <ItemsControl ItemsSource="{Binding order_cart}">
                         <ItemsControl.ItemTemplate>
@@ -67,7 +146,6 @@
                                         <TextBlock Text="{Binding device.manufacturer.name}" Style="{StaticResource Text_Style}" Margin="250,0,0,0"/>
                                         <TextBlock Text="{Binding device.category.name}" Style="{StaticResource Text_Style}" TextAlignment="Center" Margin="320,0,0,0" Width="400"/>
                                         <TextBlock Text="{Binding device.price}" Style="{StaticResource Text_Style}" TextAlignment="Right" Margin="420,0,0,0" Width="400"/>
-
                                     </Grid>
                                 </Menu:Btn>
                             </DataTemplate>
@@ -75,39 +153,59 @@
                     </ItemsControl>
                 </StackPanel>
             </ScrollViewer>
-            <TextBlock HorizontalAlignment="Left" Margin="391,0,0,48"
-                       TextWrapping="Wrap" Text="Total Price: " 
+            <TextBlock HorizontalAlignment="Left" Margin="578,0,0,86"
+                       TextWrapping="Wrap" Text="Total Price" 
                        VerticalAlignment="Bottom"
-                       Height="38" Width="158"
-                       FontSize="30" FontFamily="Rubik Medium"
-                       Foreground="White"/>
-            <TextBlock HorizontalAlignment="Left" Margin="539,0,0,48"
+                       Height="32" Width="158"
+                       FontSize="20" FontFamily="Rubik Medium"
+                       Foreground="White" RenderTransformOrigin="0.477,0.647"/>
+            <TextBlock HorizontalAlignment="Left" Margin="578,0,0,32"
                        TextWrapping="Wrap" Text="{Binding order_sum,StringFormat={}{0} грн}" 
                        VerticalAlignment="Bottom"
                        Height="38" Width="186"
-                       FontSize="30" FontFamily="Rubik Medium"
+                       FontSize="25" FontFamily="Rubik Medium"
                        Foreground="White"/>
-            <TextBlock HorizontalAlignment="Left" Margin="20,0,0,34"
+            <TextBlock HorizontalAlignment="Left" Margin="10,0,0,14"
                        TextWrapping="Wrap" Text="{Binding order_info}" 
                        VerticalAlignment="Bottom"
                        TextAlignment="Left"
-                       Height="66" Width="352"
-                       FontSize="22" FontFamily="Rubik Medium"
+                       Height="71" Width="253"
+                       FontSize="18" FontFamily="Rubik Medium"
                        Foreground="White"/>
-            <TextBlock HorizontalAlignment="Left" Margin="20,0,0,126"
+            <TextBlock HorizontalAlignment="Left" Margin="10,0,0,90"
                        TextWrapping="Wrap" Text="Address " 
                        VerticalAlignment="Bottom"
                        Height="28" Width="158"
                        FontSize="18" FontFamily="Rubik Medium"
                        Foreground="White"/>
-            <CheckBox Style="{StaticResource NewCheckBox}" HorizontalAlignment="Left" Margin="811,463,0,0" VerticalAlignment="Top" 
-                      Height="80" Width="80"
+            <TextBlock HorizontalAlignment="Left" Margin="310,0,0,52"
+                       TextWrapping="Wrap" Text="{Binding Order.customer_full_name}" 
+                       VerticalAlignment="Bottom"
+                       TextAlignment="Left"
+                       Height="33" Width="241"
+                       FontSize="23" FontFamily="Rubik Medium"
+                       Foreground="White"/>
+            <TextBlock HorizontalAlignment="Left" Margin="310,0,0,90"
+                       TextWrapping="Wrap" Text="Customer" 
+                       VerticalAlignment="Bottom"
+                       Height="28" Width="158"
+                       FontSize="18" FontFamily="Rubik Medium"
+                       Foreground="White"/>
+            <TextBlock HorizontalAlignment="Left" Margin="310,0,0,13"
+                       TextWrapping="Wrap" Text="{Binding Order.customer_phone_number,StringFormat=Phone: {0}}" 
+                       VerticalAlignment="Bottom"
+                       TextAlignment="Left"
+                       Height="34" Width="241"
+                       FontSize="20" FontFamily="Rubik Medium"
+                       Foreground="White"/>
+            <CheckBox Style="{StaticResource NewCheckBox}" HorizontalAlignment="Left" Margin="829,485,0,0" VerticalAlignment="Top" 
+                      Height="64" Width="68"
                       Command="{Binding deliverCommand}"
                       Content="🚚"
                       HorizontalContentAlignment="Center"
                       VerticalContentAlignment="Stretch"
                       IsChecked="{Binding is_delivered}"/>
-            <TextBlock HorizontalAlignment="Left" Margin="805,416,0,0"
+            <TextBlock HorizontalAlignment="Left" Margin="817,452,0,0"
                        TextWrapping="Wrap" Text="Delivered " 
                        VerticalAlignment="Top"
                        Height="28" Width="92"

@@ -41,12 +41,12 @@ namespace AccountingSystem.ViewModel
             InitCommands();
             InitVM(TableName.devices.ToString());
         }
-        private void InitCommands()
+        public void Search(object obj) => InitVM(command: SearchStringCommand(TableName.devices, SearchText,new string[] {"id_device","name", "amount" }),sort: true);
+        protected override void InitCommands()
         {
             SortCommand = new RelayCommand(SortType);
             SearchCommand = new RelayCommand(Search);
         }
-        public void Search(object obj) => InitVM(command: SearchStringCommand(TableName.devices, SearchText,new string[] {"id_device","name", "amount" }),sort: true);
         protected override void InitVM(string tableName = "", string command = "", bool sort = false)
         {
             DevicesData = new DB().GetTableData(tableName, sort, command);

@@ -24,12 +24,12 @@ namespace AccountingSystem.ViewModel
         public bool is_delivered { get => Order.is_delivered; set { Order.is_delivered = value; OnPropertyChanged(); } }
         public decimal order_sum { get => Order.sum; }
 
-
         public OrdersModel Order 
         { 
             get { return currentOrder; }
             set { currentOrder = value; OnPropertyChanged(); }
         }
+
 
         public OrderDetailsVM()
         {
@@ -42,7 +42,9 @@ namespace AccountingSystem.ViewModel
                 date = order.date,
                 order_info = order.order_info,
                 is_delivered = order.is_delivered,
-                sum = order.sum
+                sum = order.sum,
+                customer_full_name = order.customer_full_name,
+                customer_phone_number = order.customer_phone_number
             };
             devices = new ObservableCollection<DeviceModel>();
             CollectionFill();
