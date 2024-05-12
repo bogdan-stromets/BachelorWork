@@ -13,6 +13,22 @@
         <vm:ProductVM />
     </UserControl.DataContext>
 
+    <UserControl.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <EventTrigger.Actions>
+                <BeginStoryboard>
+                    <Storyboard TargetProperty="Width" TargetName="searchTextBox">
+                        <DoubleAnimation From="0" To="250"
+                        AutoReverse="True"
+                        RepeatBehavior="0:0:0.5"
+                        Duration="0:0:0.5"
+                        />
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger.Actions>
+        </EventTrigger>
+    </UserControl.Triggers>
+
     <Grid Margin="15" Background="#212529">
         <!-- // Header // -->
         <Grid >
@@ -136,29 +152,42 @@
             </StackPanel>
         </ScrollViewer>
 
-        <Button 
+        <StackPanel  Margin="0,29,70,472" Orientation="Horizontal" HorizontalAlignment="Right" >
+            <Button 
+                DockPanel.Dock="Left"
             Content="+"
             Style="{DynamicResource RoundedButtonStyle}" 
-            Margin="693,37,214,486"
+            Margin="0"
             Background="#39688E"
             Foreground="White"
             FontFamily="Rubik-Medium"
-            FontSize="30"/>
-        <Button 
+            FontSize="30" Height="48" Width="26"/>
+            <Button 
             Content="-"
+             DockPanel.Dock="Left"
             Style="{DynamicResource RoundedButtonStyle}" 
-            Margin="756,37,151,486"
+            Margin="32,0,0,0"
             Background="#39688E"
             Foreground="White"
             FontFamily="Rubik-Medium"
-            FontSize="30"/>
-        <Button 
+            FontSize="30" Height="48" Width="26"/>
+            <TextBox x:Name="searchTextBox" Margin="32,0,-28,0" 
+                     Text="{Binding SearchText}"
+                     Height="40" Width="0"
+                     Padding="10"
+                     FontFamily="Rubik-Medium"
+                     FontSize="15"
+                     />
+            <Button 
             Content="🔍"
             Style="{DynamicResource RoundedButtonStyle}" 
-            Margin="818,37,89,486"
+            Margin="32,0,30,0"
+            DockPanel.Dock="Left"
+            Command="{Binding SearchCommand}"
             Background="#39688E"
             Foreground="White"
             FontFamily="Rubik-Medium"
-            FontSize="30" RenderTransformOrigin="0.6,-0.447"/>
+            FontSize="30" Height="48" Width="26"/>
+        </StackPanel>
     </Grid>
 </UserControl>
