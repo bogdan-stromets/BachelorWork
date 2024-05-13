@@ -89,6 +89,7 @@
 
   <ItemGroup>
     <PackageReference Include="MySqlConnector" Version="2.3.7" />
+    <PackageReference Include="OpenCvSharp4" Version="4.9.0.20240103" />
   </ItemGroup>
 
   <ItemGroup>

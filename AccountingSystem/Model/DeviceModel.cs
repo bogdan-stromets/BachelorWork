@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.Imaging;
 
 namespace AccountingSystem.Model
 {
@@ -17,9 +19,11 @@ namespace AccountingSystem.Model
         public decimal price { get; set; }
         public CategoryModel category { get; set; }
         public int stock_size { get; set; }
-        public string pictureURL { get; set; }
+        private string pictureURL { get; set; }
         public List<ManufacturerModel> manufacturerList { get; set; }
         public List<CategoryModel> categoryList { get; set; }
+        
+        public BitmapImage picture { get; set; }
         private DB dB;
 
         public DeviceModel(DataRow dr)
@@ -33,8 +37,8 @@ namespace AccountingSystem.Model
             pictureURL = dr.ItemArray[7].ToString();
             GetManufacturer(int.Parse(dr.ItemArray[3].ToString()));
             GetCategory(int.Parse(dr.ItemArray[5].ToString()));
+            GetPicture();
         }
-
         public DeviceModel(int device_id)
         {
             dB = new DB();
@@ -53,6 +57,24 @@ namespace AccountingSystem.Model
                     GetCategory(int.Parse(dr.ItemArray[5].ToString()));
                     break;
                 }
+            }
+            GetPicture();
+        }
+        private void GetPicture()
+        {
+            try
+            {
+                picture = new BitmapImage();
+                picture.BeginInit();
+                picture.UriSource = new Uri(pictureURL);
+                picture.EndInit();
+            }
+            catch (Exception)
+            {
+                picture = new BitmapImage();
+                picture.BeginInit();
+                picture.UriSource = new Uri("https://static.vecteezy.com/system/resources/previews/005/337/799/non_2x/icon-image-not-found-free-vector.jpg");
+                picture.EndInit();
             }
         }
 

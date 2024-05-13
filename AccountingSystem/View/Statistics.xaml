@@ -29,7 +29,7 @@
                        Height="38" Width="214"
                        FontSize="22" FontFamily="Rubik Medium"
                        Foreground="White"/>
-            <Image Source="{Binding Stats.most_popular_product.pictureURL}" Stretch="Uniform" Width="Auto" Height="Auto" Margin="68,188,626,139"  />
+            <Image Source="{Binding Stats.most_popular_product.picture}" Stretch="Uniform" Width="Auto" Height="Auto" Margin="68,188,626,139"  />
             <Button Style="{DynamicResource RoundedButtonStyle}"
                           Background="#39688E"
                           Foreground="White"
@@ -47,7 +47,7 @@
                        Height="38"
                        FontSize="22" FontFamily="Rubik Medium"
                        Foreground="White"/>
-            <Image Source="{Binding Stats.least_popular_product.pictureURL}" Margin="628,186,74,137"  />
+            <Image Source="{Binding Stats.least_popular_product.picture}" Margin="628,186,74,137"  />
             <Button Style="{DynamicResource RoundedButtonStyle}"
                           Background="#39688E"
                           Foreground="White"

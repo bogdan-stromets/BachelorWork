@@ -162,15 +162,6 @@
             Foreground="White"
             FontFamily="Rubik-Medium"
             FontSize="30" Height="48" Width="26"/>
-            <Button 
-            Content="-"
-             DockPanel.Dock="Left"
-            Style="{DynamicResource RoundedButtonStyle}" 
-            Margin="32,0,0,0"
-            Background="#39688E"
-            Foreground="White"
-            FontFamily="Rubik-Medium"
-            FontSize="30" Height="48" Width="26"/>
             <TextBox x:Name="searchTextBox" Margin="32,0,-28,0" 
                      Text="{Binding SearchText}"
                      Height="40" Width="0"

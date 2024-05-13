@@ -26,12 +26,12 @@ namespace AccountingSystem.Model
         public OrdersModel(DataRow dr)
         {
             id = int.Parse(dr.ItemArray[0].ToString());
-            date = DateTime.Parse(dr.ItemArray[2].ToString());
-            order_info = dr.ItemArray[4].ToString();
-            is_delivered = bool.Parse(dr.ItemArray[3].ToString());
+            date = DateTime.Parse(dr.ItemArray[1].ToString());
+            order_info = dr.ItemArray[3].ToString();
+            is_delivered = bool.Parse(dr.ItemArray[2].ToString());
             cart = new List<CartModel>();
-            customer_full_name = dr.ItemArray[5].ToString();
-            customer_phone_number = dr.ItemArray[6].ToString();
+            customer_full_name = dr.ItemArray[4].ToString();
+            customer_phone_number = dr.ItemArray[5].ToString();
             CartFill();
             sum = GetSum();
         }

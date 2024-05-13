@@ -26,6 +26,7 @@ namespace AccountingSystem.ViewModel
         public ICommand HomeCommand { get; set; }
         public ICommand CustomersCommand { get; set; }
         public ICommand ProductsCommand { get; set; }
+        public static ICommand ProductsStaticCommand { get; set; }
         public ICommand ProductDetailsCommand { get; set; }
         public ICommand MostProductCommand { get; set; }
         public ICommand LeastProductCommand { get; set; }
@@ -73,6 +74,7 @@ namespace AccountingSystem.ViewModel
             HomeCommand = new RelayCommand(Home);
             CustomersCommand = new RelayCommand(Customer);
             ProductsCommand = new RelayCommand(Product);
+            ProductsStaticCommand = new RelayCommand(Product);
             ProductDetailsCommand = new RelayCommand(ProductDetails);
             OrdersCommand = new RelayCommand(Order);
             OrderDetailsCommand = new RelayCommand(OrderDetails);
@@ -84,6 +86,11 @@ namespace AccountingSystem.ViewModel
             PrevPageCommand = new RelayCommand(PrevPage);
             // Startup Page
             CurrentView = new HomeVM();
+        }
+
+        public static void ExecuteProductCommand()
+        {
+            ProductsStaticCommand.Execute(null);
         }
     }
 }

@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "b8mGpcusAgHmEgoMagJzMR2a/+JHCQG4adTtK2fwBrs2Tj45Lec8t0EiwCfjczvQCFBB5PcMgOGsDYknLsn5lw==",
+  "dgSpecHash": "NJP0kqNg3A9FrKkuCHERvGsvxP8Gyw+76z9OQX6bgrXN3rkk9DwdbcmriJXnruFClOfZ9LC4zWmGtLzzkiOTtg==",
   "success": true,
   "projectFilePath": "F:\\Study\\4 курс\\Bachelor work\\Project\\AccountingSystem\\BachelorWork\\AccountingSystem\\AccountingSystem.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\String.Empty\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.1\\microsoft.extensions.logging.abstractions.7.0.1.nupkg.sha512",
     "C:\\Users\\String.Empty\\.nuget\\packages\\mysqlconnector\\2.3.7\\mysqlconnector.2.3.7.nupkg.sha512",
+    "C:\\Users\\String.Empty\\.nuget\\packages\\opencvsharp4\\4.9.0.20240103\\opencvsharp4.4.9.0.20240103.nupkg.sha512",
     "C:\\Users\\String.Empty\\.nuget\\packages\\system.diagnostics.diagnosticsource\\7.0.2\\system.diagnostics.diagnosticsource.7.0.2.nupkg.sha512",
+    "C:\\Users\\String.Empty\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
     "C:\\Users\\String.Empty\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
   ],
   "logs": []

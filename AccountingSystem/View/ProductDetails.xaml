@@ -39,15 +39,29 @@
                        TextAlignment="Right"
                        FontSize="30" FontFamily="Rubik Medium"
                        Foreground="White"/>
-            <Image Source="{Binding CurrentDevice.pictureURL}" Width="Auto" Height="Auto" Margin="28,94,536,139"/>
-            <TextBlock HorizontalAlignment="Right" Margin="0,82,237,0"
+            <Image Source="{Binding CurrentDevice.picture}" Width="Auto" Height="Auto" Margin="28,94,536,139" />
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left"
+                        Margin="420,85,6,447"
+                        Height="38" Width="500">
+                <TextBlock HorizontalAlignment="Left" Margin="0"
                        TextWrapping="Wrap" Text="{Binding CurrentDevice.name}" 
                        VerticalAlignment="Top"
                        TextAlignment="Left"
-                       Height="38" Width="269"
+                       Height="38" Width="Auto"
 
                        FontSize="32" FontFamily="Rubik Medium"
                        Foreground="White"/>
+                <Button 
+                Content="🗑️"
+                Style="{DynamicResource BinButtonStyle}"
+                Background="#39688E"
+                    Command="{Binding DeleteCommand}"
+                    CommandParameter="{Binding}"
+                    Height="38"
+                    Width="20"
+                FontFamily="Rubik-Medium"
+                FontSize="20" Margin="20,0,0,0"/>
+            </StackPanel>
             <TextBlock HorizontalAlignment="Right" Margin="0,138,237,0"
                        TextWrapping="Wrap" Text="{Binding CurrentDevice.manufacturer.name}" 
                        VerticalAlignment="Top"
@@ -79,7 +93,8 @@
                        TextAlignment="Left"
                        FontSize="30" FontFamily="Rubik Medium"
                        Foreground="White"/>
-            
+
+
         </Grid>
     </Grid>
 </UserControl>
