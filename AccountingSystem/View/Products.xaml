@@ -154,14 +154,15 @@
 
         <StackPanel  Margin="0,29,70,472" Orientation="Horizontal" HorizontalAlignment="Right" >
             <Button 
-                DockPanel.Dock="Left"
-            Content="+"
-            Style="{DynamicResource RoundedButtonStyle}" 
-            Margin="0"
-            Background="#39688E"
-            Foreground="White"
-            FontFamily="Rubik-Medium"
-            FontSize="30" Height="48" Width="26"/>
+                 Content="+"
+                 Style="{DynamicResource RoundedButtonStyle}" 
+                 Margin="0"
+                 Background="#39688E"
+                 Foreground="White"
+                 FontFamily="Rubik-Medium"
+                 FontSize="30" Height="48" Width="26"
+                 Command="{Binding DataContext.AddProductCommand,RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
+                 CommandParameter="{Binding}"/>
             <TextBox x:Name="searchTextBox" Margin="32,0,-28,0" 
                      Text="{Binding SearchText}"
                      Height="40" Width="0"

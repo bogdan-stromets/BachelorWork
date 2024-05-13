@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 F:\Study\4 курс\Bachelor work\Project\AccountingSystem\BachelorWork\AccountingSystem\App.xaml
-17652046505
+18-324414651
 16236240406
-41903257010
+43-1928232656
 197-386863167
-Authorization.xaml;MainWindow.xaml;Styles\Button.xaml;Styles\CheckBox.xaml;Styles\Image.xaml;Styles\Page.xaml;Styles\Text.xaml;Utilities\DataTemplate.xaml;View\Customers.xaml;View\Home.xaml;View\OrderDetails.xaml;View\Orders.xaml;View\ProductDetails.xaml;View\Products.xaml;View\Settings.xaml;View\Shipments.xaml;View\Statistics.xaml;
+Authorization.xaml;MainWindow.xaml;Styles\Button.xaml;Styles\CheckBox.xaml;Styles\Image.xaml;Styles\Page.xaml;Styles\Text.xaml;Utilities\DataTemplate.xaml;View\AddingProduct.xaml;View\Customers.xaml;View\Home.xaml;View\OrderDetails.xaml;View\Orders.xaml;View\ProductDetails.xaml;View\Products.xaml;View\Settings.xaml;View\Shipments.xaml;View\Statistics.xaml;
 
 False
 

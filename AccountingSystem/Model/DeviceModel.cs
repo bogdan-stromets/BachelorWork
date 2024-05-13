@@ -99,7 +99,10 @@ namespace AccountingSystem.Model
 
             manufacturer = manufacturerList.Find(x => x.id == id);
         }
-
+        internal static string AddCommand(string name, string description,int manufacturer_id,decimal price,int category_id,string count, string pictureURL)
+        {
+            return $"INSERT INTO `{TableName.devices}` (`id_device`, `name`, `description`, `id_manufacturer`, `price`, `id_category`, `amount`, `picture_url`) VALUES (NULL, '{name}', '{description}', '{manufacturer_id}', '{price}', '{category_id}', '{count}', '{pictureURL}');";
+        }
         internal string GetUpdateCommand()
         {
             return $"UPDATE `{TableName.devices}` SET `amount` = '{stock_size}' WHERE `{TableName.devices}`.`id_device` = {id}";

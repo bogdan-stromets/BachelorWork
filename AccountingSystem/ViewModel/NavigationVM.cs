@@ -23,10 +23,10 @@ namespace AccountingSystem.ViewModel
             set { _prevView = value; OnPropertyChanged(); }
         }
         public static object CurrentObject { get; set; }
+        public static ICommand ProductsStaticCommand { get; set; }
         public ICommand HomeCommand { get; set; }
         public ICommand CustomersCommand { get; set; }
         public ICommand ProductsCommand { get; set; }
-        public static ICommand ProductsStaticCommand { get; set; }
         public ICommand ProductDetailsCommand { get; set; }
         public ICommand MostProductCommand { get; set; }
         public ICommand LeastProductCommand { get; set; }
@@ -35,6 +35,7 @@ namespace AccountingSystem.ViewModel
         public ICommand StatisticsCommand { get; set; }
         public ICommand ShipmentsCommand { get; set; }
         public ICommand SettingsCommand { get; set; }
+        public ICommand AddProductCommand { get; set; }
         public ICommand PrevPageCommand { get; set; }
 
         private void Home(object obj) => CurrentView = new HomeVM();
@@ -69,6 +70,7 @@ namespace AccountingSystem.ViewModel
         private void Shipment(object obj) => CurrentView = new ShipmentVM();
         private void Setting(object obj) => CurrentView = new SettingVM();
         private void PrevPage(object obj) => CurrentView = PrevView;
+        private void AddProduct(object obj) => CurrentView = new AddingProductVM();
         public NavigationVM()
         {
             HomeCommand = new RelayCommand(Home);
@@ -83,6 +85,7 @@ namespace AccountingSystem.ViewModel
             SettingsCommand = new RelayCommand(Setting);
             MostProductCommand = new RelayCommand(MostProductDetails);
             LeastProductCommand = new RelayCommand(LeastProductDetails);
+            AddProductCommand = new RelayCommand(AddProduct);
             PrevPageCommand = new RelayCommand(PrevPage);
             // Startup Page
             CurrentView = new HomeVM();

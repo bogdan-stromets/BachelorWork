@@ -2,12 +2,18 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
+    <Compile Update="View\AddingProduct.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\OrderDetails.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Styles\CheckBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\AddingProduct.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\ProductDetails.xaml">
