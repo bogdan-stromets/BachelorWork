@@ -1,0 +1,94 @@
+﻿<UserControl x:Class="AccountingSystem.View.Statistics"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:vm="clr-namespace:AccountingSystem.ViewModel"
+             mc:Ignorable="d"
+             d:DesignHeight="600"
+             d:DesignWidth="962"
+             Style="{StaticResource Page_Style}">
+
+    <UserControl.DataContext>
+        <vm:StatisticsVM />
+    </UserControl.DataContext>
+
+    <Grid Margin="15" Background="#212529">
+        <Grid>
+
+            <TextBlock HorizontalAlignment="Left" Margin="72,32,0,0"
+                       TextWrapping="Wrap" Text="Statistics" 
+                       VerticalAlignment="Top"
+                       Height="38" Width="158"
+                       FontSize="32" FontFamily="Rubik Medium"
+                       Foreground="White"/>
+            <TextBlock HorizontalAlignment="Left" Margin="80,143,0,0"
+                       TextWrapping="Wrap" Text="Most Popular Product" 
+                       TextAlignment="Center"
+                       VerticalAlignment="Top"
+                       Height="38" Width="214"
+                       FontSize="22" FontFamily="Rubik Medium"
+                       Foreground="White"/>
+            <Image Source="{Binding Stats.most_popular_product.pictureURL}" Stretch="Uniform" Width="Auto" Height="Auto" Margin="68,188,626,139"  />
+            <Button Style="{DynamicResource RoundedButtonStyle}"
+                          Background="#39688E"
+                          Foreground="White"
+                          FontFamily="Rubik-Medium"
+                    FontSize="20"
+                    Command="{Binding DataContext.MostProductCommand, RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
+                    CommandParameter="{Binding}"
+                    Content="{Binding Stats.most_popular_product.name}"
+                    Margin="80,443,652,77"/>
+
+            <TextBlock Margin="634,143,80,0"
+                       TextWrapping="Wrap" Text="Least Popular Product" 
+                       VerticalAlignment="Top"
+                       TextAlignment="Center"
+                       Height="38"
+                       FontSize="22" FontFamily="Rubik Medium"
+                       Foreground="White"/>
+            <Image Source="{Binding Stats.least_popular_product.pictureURL}" Margin="628,186,74,137"  />
+            <Button Style="{DynamicResource RoundedButtonStyle}"
+                          Background="#39688E"
+                          Foreground="White"
+                          FontFamily="Rubik-Medium"
+                    FontSize="20"
+                    Command="{Binding DataContext.LeastProductCommand, RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
+                    CommandParameter="{Binding}"
+                    Content="{Binding Stats.least_popular_product.name}"
+                    Margin="628,443,101,77"/>
+
+            <TextBlock Margin="372,188,354,0"
+                       TextWrapping="Wrap" Text="Number of deliveries" 
+                       VerticalAlignment="Top"
+                       TextAlignment="Center"
+                       Height="Auto"
+                       FontSize="22" FontFamily="Rubik Medium"
+                       Foreground="White"
+                       />
+            <TextBlock Margin="372,255,354,0"
+                       TextWrapping="Wrap" Text="{Binding Stats.deliveries_number}" 
+                       VerticalAlignment="Top"
+                       TextAlignment="Center"
+                       Height="38"
+                       FontSize="32" FontFamily="Rubik Medium"
+                       Foreground="White"/>
+            <TextBlock Margin="372,412,354,0"
+                       TextWrapping="Wrap" Text="Total income" 
+                       VerticalAlignment="Top"
+                       TextAlignment="Center"
+                       Height="38"
+                       FontSize="22" FontFamily="Rubik Medium"
+                       Foreground="White"/>
+            <TextBlock Margin="372,455,354,0"
+                       TextWrapping="Wrap" Text="{Binding Stats.all_sum,StringFormat={}{0} грн}" 
+                       VerticalAlignment="Top"
+                       TextAlignment="Center"
+                       Height="38"
+                       FontSize="32" FontFamily="Rubik Medium"
+                       Foreground="White"/>
+
+        </Grid>
+
+    </Grid>
+</UserControl>

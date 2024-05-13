@@ -120,14 +120,14 @@
                     <!--// Transactions //-->
 
                     <Menu:Btn Style="{StaticResource BtnStyle}"
-                              Command="{Binding TransactionsCommand}">
+                              Command="{Binding StatisticsCommand}">
 
                         <Grid>
 
                             <Image Source="Images/img_transaction.png"
                                    Style="{StaticResource Image_Style}" />
 
-                            <TextBlock Text="Transactions"
+                            <TextBlock Text="Statistics"
                                        Style="{StaticResource Text_Style}" />
 
                         </Grid>

@@ -40,9 +40,8 @@ namespace AccountingSystem.Model
         {
             decimal sum = 0;
             foreach (CartModel cart in cart)
-            {
                 sum += cart.device.price * cart.amount;
-            }
+
             return sum;
         }
 

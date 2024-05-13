@@ -26,11 +26,6 @@ namespace AccountingSystem.ViewModel
             get { return employeer; }
             set { employeer = value; OnPropertyChanged(); }
         }
-        /*public int CustomerID
-        {
-            get { return _pageModel.CustomerCount; }
-            set { _pageModel.CustomerCount = value; OnPropertyChanged(); }
-        }*/
 
         public CustomerVM()
         {

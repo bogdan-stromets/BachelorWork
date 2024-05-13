@@ -35,7 +35,6 @@ F:\Study\4 курс\Bachelor work\Project\AccountingSystem\BachelorWork\Accounti
 F:\Study\4 курс\Bachelor work\Project\AccountingSystem\BachelorWork\AccountingSystem\obj\Debug\net6.0-windows\View\Products.g.cs
 F:\Study\4 курс\Bachelor work\Project\AccountingSystem\BachelorWork\AccountingSystem\obj\Debug\net6.0-windows\View\Settings.g.cs
 F:\Study\4 курс\Bachelor work\Project\AccountingSystem\BachelorWork\AccountingSystem\obj\Debug\net6.0-windows\View\Shipments.g.cs
-F:\Study\4 курс\Bachelor work\Project\AccountingSystem\BachelorWork\AccountingSystem\obj\Debug\net6.0-windows\View\Transactions.g.cs
 F:\Study\4 курс\Bachelor work\Project\AccountingSystem\BachelorWork\AccountingSystem\obj\Debug\net6.0-windows\App.g.cs
 F:\Study\4 курс\Bachelor work\Project\AccountingSystem\BachelorWork\AccountingSystem\obj\Debug\net6.0-windows\AccountingSystem_Content.g.cs
 F:\Study\4 курс\Bachelor work\Project\AccountingSystem\BachelorWork\AccountingSystem\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
@@ -51,7 +50,6 @@ F:\Study\4 курс\Bachelor work\Project\AccountingSystem\BachelorWork\Accounti
 F:\Study\4 курс\Bachelor work\Project\AccountingSystem\BachelorWork\AccountingSystem\obj\Debug\net6.0-windows\View\Products.baml
 F:\Study\4 курс\Bachelor work\Project\AccountingSystem\BachelorWork\AccountingSystem\obj\Debug\net6.0-windows\View\Settings.baml
 F:\Study\4 курс\Bachelor work\Project\AccountingSystem\BachelorWork\AccountingSystem\obj\Debug\net6.0-windows\View\Shipments.baml
-F:\Study\4 курс\Bachelor work\Project\AccountingSystem\BachelorWork\AccountingSystem\obj\Debug\net6.0-windows\View\Transactions.baml
 F:\Study\4 курс\Bachelor work\Project\AccountingSystem\BachelorWork\AccountingSystem\obj\Debug\net6.0-windows\AccountingSystem.g.resources
 F:\Study\4 курс\Bachelor work\Project\AccountingSystem\BachelorWork\AccountingSystem\obj\Debug\net6.0-windows\AccountingSystem.GeneratedMSBuildEditorConfig.editorconfig
 F:\Study\4 курс\Bachelor work\Project\AccountingSystem\BachelorWork\AccountingSystem\obj\Debug\net6.0-windows\AccountingSystem.AssemblyInfoInputs.cache
@@ -68,3 +66,5 @@ F:\Study\4 курс\Bachelor work\Project\AccountingSystem\BachelorWork\Accounti
 F:\Study\4 курс\Bachelor work\Project\AccountingSystem\BachelorWork\AccountingSystem\obj\Debug\net6.0-windows\Styles\CheckBox.baml
 F:\Study\4 курс\Bachelor work\Project\AccountingSystem\BachelorWork\AccountingSystem\obj\Debug\net6.0-windows\View\ProductDetails.g.cs
 F:\Study\4 курс\Bachelor work\Project\AccountingSystem\BachelorWork\AccountingSystem\obj\Debug\net6.0-windows\View\ProductDetails.baml
+F:\Study\4 курс\Bachelor work\Project\AccountingSystem\BachelorWork\AccountingSystem\obj\Debug\net6.0-windows\View\Statistics.g.cs
+F:\Study\4 курс\Bachelor work\Project\AccountingSystem\BachelorWork\AccountingSystem\obj\Debug\net6.0-windows\View\Statistics.baml

@@ -28,8 +28,8 @@
         <view:OrderDetails />
     </DataTemplate>
 
-    <DataTemplate DataType="{x:Type vm:TransactionVM}">
-        <view:Transactions />
+    <DataTemplate DataType="{x:Type vm:StatisticsVM}">
+        <view:Statistics />
     </DataTemplate>
 
     <DataTemplate DataType="{x:Type vm:ShipmentVM}">

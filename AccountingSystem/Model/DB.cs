@@ -10,7 +10,7 @@ using System.Windows.Controls.Primitives;
 
 namespace AccountingSystem.Model
 {
-    enum TableName {cart, categories,devices,manufacturers,orders, employees}
+    enum TableName {cart, categories,devices,manufacturers,orders, employees, statistics }
     class DB
     {
         private MySqlConnection connection;

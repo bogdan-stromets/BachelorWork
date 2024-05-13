@@ -18,9 +18,9 @@ namespace AccountingSystem.View
     /// <summary>
     /// Interaction logic for Transactions.xaml
     /// </summary>
-    public partial class Transactions : UserControl
+    public partial class Statistics : UserControl
     {
-        public Transactions()
+        public Statistics()
         {
             InitializeComponent();
         }

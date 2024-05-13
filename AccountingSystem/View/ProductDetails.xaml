@@ -24,7 +24,7 @@
                        FontSize="32" FontFamily="Rubik Medium"
                        Foreground="White"/>
             <Button Content="←" 
-                Command="{Binding DataContext.ProductsCommand,
+                Command="{Binding DataContext.PrevPageCommand,
                 RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
                 Style="{DynamicResource RoundedButtonStyle}"
                 Background="#39688E"
@@ -32,15 +32,15 @@
                 FontFamily="Rubik-Medium"
                 FontSize="30" Margin="10,0,0,511" HorizontalAlignment="Left" Width="26" Height="38" VerticalAlignment="Bottom"  />
             <!--// Stock Size //-->
-            <TextBlock HorizontalAlignment="Right" Margin="0,21,58,0"
+            <TextBlock HorizontalAlignment="Right" Margin="0,500,27,0"
                        TextWrapping="Wrap" Text="{Binding CurrentDevice.stock_size,StringFormat=Stock size: {0}}" 
                        VerticalAlignment="Top"
                        Height="38" Width="269"
-                       TextAlignment="Left"
-                       FontSize="32" FontFamily="Rubik Medium"
+                       TextAlignment="Right"
+                       FontSize="30" FontFamily="Rubik Medium"
                        Foreground="White"/>
-            <Image Source="{Binding CurrentDevice.pictureURL}" Width="250" Height="250" Margin="28,109,692,211"/>
-            <TextBlock HorizontalAlignment="Right" Margin="0,85,371,0"
+            <Image Source="{Binding CurrentDevice.pictureURL}" Width="Auto" Height="Auto" Margin="28,94,536,139"/>
+            <TextBlock HorizontalAlignment="Right" Margin="0,82,237,0"
                        TextWrapping="Wrap" Text="{Binding CurrentDevice.name}" 
                        VerticalAlignment="Top"
                        TextAlignment="Left"
@@ -48,34 +48,38 @@
 
                        FontSize="32" FontFamily="Rubik Medium"
                        Foreground="White"/>
-            <TextBlock HorizontalAlignment="Right" Margin="0,141,371,0"
+            <TextBlock HorizontalAlignment="Right" Margin="0,138,237,0"
                        TextWrapping="Wrap" Text="{Binding CurrentDevice.manufacturer.name}" 
                        VerticalAlignment="Top"
                        Height="38" Width="269"
                        TextAlignment="Left"
                        FontSize="25" FontFamily="Rubik Medium"
                        Foreground="White"/>
-            <TextBlock HorizontalAlignment="Right" Margin="0,196,371,0"
+            <TextBlock HorizontalAlignment="Right" Margin="0,193,237,0"
                        TextWrapping="Wrap" Text="{Binding CurrentDevice.category.name}" 
                        VerticalAlignment="Top"
                        Height="38" Width="269"
                        FontSize="18" FontFamily="Rubik Medium"
                        Foreground="White"/>
-            <ScrollViewer VerticalScrollBarVisibility="Hidden" Margin="290,244,27,91">
+            <ScrollViewer VerticalScrollBarVisibility="Hidden" Margin="424,244,27,91">
                 <TextBlock Text="{Binding CurrentDevice.description}" 
                            TextWrapping="Wrap"
                            FontSize="21"
                            FontFamily="Rubik-Medium"
                            Style="{StaticResource Text_Style}"
                            Width="Auto" Height="Auto"
-                           Margin="0" />
+                           VerticalAlignment="Top"
+                           Margin="0"
+                           Padding="0"/>
             </ScrollViewer>
-            <TextBlock HorizontalAlignment="Left" Margin="30,0,0,91"
+            <TextBlock Margin="34,0,542,42"
                        TextWrapping="Wrap" Text="{Binding CurrentDevice.price,StringFormat=Price: {0} грн}" 
                        VerticalAlignment="Bottom"
-                       Height="38" Width="302"
+                       Height="38" Width="Auto"
+                       TextAlignment="Left"
                        FontSize="30" FontFamily="Rubik Medium"
                        Foreground="White"/>
+            
         </Grid>
     </Grid>
 </UserControl>

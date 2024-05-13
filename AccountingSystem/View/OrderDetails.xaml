@@ -117,18 +117,20 @@
                 FontFamily="Rubik-Medium"
                 FontSize="30" Margin="10,0,0,503" HorizontalAlignment="Left" Width="26" Height="38" VerticalAlignment="Bottom" RenderTransformOrigin="0.739,-0.399"  />
 
-            <TextBlock HorizontalAlignment="Right" Margin="0,28,40,0"
+            <TextBlock HorizontalAlignment="Right" Margin="0,42,49,0"
                        TextWrapping="Wrap" Text="{Binding Order.date}" 
                        VerticalAlignment="Top"
                        Height="38" Width="158"
-                       FontSize="32" FontFamily="Rubik Medium"
-                       Foreground="White"/>
-            <TextBlock HorizontalAlignment="Right" Margin="0,28,109,0"
+                       FontSize="27" FontFamily="Rubik Medium"
+                       Foreground="White"
+                       Padding="5"/>
+            <TextBlock HorizontalAlignment="Right" Margin="0,42,118,0"
                        TextWrapping="Wrap" Text="Date: " 
                        VerticalAlignment="Top"
                        Height="38" Width="181"
-                       FontSize="32" FontFamily="Rubik Medium"
-                       Foreground="White"/>
+                       FontSize="27" FontFamily="Rubik Medium"
+                       Foreground="White"
+                       Padding="5"/>
 
             <ScrollViewer VerticalScrollBarVisibility="Hidden" Margin="0,142,0,142">
                 <StackPanel Margin="0,0,0,0" Height="Auto">
