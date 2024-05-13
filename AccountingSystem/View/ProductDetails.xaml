@@ -24,7 +24,7 @@
                        FontSize="32" FontFamily="Rubik Medium"
                        Foreground="White"/>
             <Button Content="←" 
-                Command="{Binding DataContext.PrevPageCommand,
+                Command="{Binding DataContext.ProductsCommand,
                 RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
                 Style="{DynamicResource RoundedButtonStyle}"
                 Background="#39688E"
@@ -52,15 +52,25 @@
                        FontSize="32" FontFamily="Rubik Medium"
                        Foreground="White"/>
                 <Button 
+                Content="🖊"
+                Style="{DynamicResource EditButtonStyle}"
+                Background="#39688E"
+                    Command="{Binding DataContext.EditProductCommand,RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
+                    CommandParameter="{Binding}"
+                    Height="37"
+                    Width="10"
+                FontFamily="Rubik-Medium"
+                FontSize="20" Margin="20,0,0,0"/>
+                <Button 
                 Content="🗑️"
                 Style="{DynamicResource BinButtonStyle}"
                 Background="#39688E"
                     Command="{Binding DeleteCommand}"
                     CommandParameter="{Binding}"
-                    Height="38"
-                    Width="20"
+                    Height="37"
+                    Width="10"
                 FontFamily="Rubik-Medium"
-                FontSize="20" Margin="20,0,0,0"/>
+                FontSize="20" Margin="35,0,0,0"/>
             </StackPanel>
             <TextBlock HorizontalAlignment="Right" Margin="0,138,237,0"
                        TextWrapping="Wrap" Text="{Binding CurrentDevice.manufacturer.name}" 

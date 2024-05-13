@@ -93,6 +93,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="View\ChangeProduct.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\ProductDetails.xaml.cs">
       <SubType>Code</SubType>
     </Compile>

@@ -44,6 +44,7 @@
                        Foreground="White"/>
         <TextBox Margin="72,131,595,407" 
                  Text="{Binding ProductName}"
+                 MaxLength="99"
                  Padding="6"/>
         <TextBlock HorizontalAlignment="Left" Margin="72,190,0,0"
                        TextWrapping="Wrap" Text="Description" 
@@ -64,7 +65,7 @@
                  ItemsSource="{Binding manufacturersList}"
                  SelectedItem="{Binding ProductManufacturerString}"
                  Padding="6"/>
-        <TextBlock HorizontalAlignment="Left" Margin="346,195,0,0"
+        <TextBlock HorizontalAlignment="Left" Margin="345,190,0,0"
                        TextWrapping="Wrap" Text="Category" 
                        VerticalAlignment="Top"
                        Height="23" Width="198"
@@ -83,6 +84,7 @@
         <TextBox Margin="73,468,594,70" 
                  Text="{Binding ProductCount}"
                  Padding="6"
+                 MaxLength="10"
                  PreviewTextInput="TextBox_PreviewTextInput" PreviewKeyDown="TextBox_PreviewKeyDown"/>
         <TextBlock HorizontalAlignment="Left" Margin="346,444,0,0"
                        TextWrapping="Wrap" Text="Price" 
@@ -93,6 +95,7 @@
         <TextBox Margin="346,468,321,70" 
                  Text="{Binding ProductPrice}"
                  Padding="6" 
+                 MaxLength="10"
                  PreviewTextInput="TextBox_PreviewTextInput" PreviewKeyDown="TextBox_PreviewKeyDown"/>
         <TextBlock HorizontalAlignment="Left" Margin="345,291,0,0"
                        TextWrapping="Wrap" Text="Picture URL" 

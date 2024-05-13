@@ -131,7 +131,7 @@
                        Foreground="White" Grid.ColumnSpan="2" Grid.Column="1"/>
 
         </Grid>
-        <ScrollViewer VerticalScrollBarVisibility="Hidden" Margin="0,141,0,39">
+        <ScrollViewer VerticalScrollBarVisibility="Hidden" Margin="0,141,0,70">
             <StackPanel Margin="0,0,0,0" Height="Auto">
                 <ItemsControl ItemsSource="{Binding devices}">
                     <ItemsControl.ItemTemplate>
@@ -152,17 +152,7 @@
             </StackPanel>
         </ScrollViewer>
 
-        <StackPanel  Margin="0,29,70,472" Orientation="Horizontal" HorizontalAlignment="Right" >
-            <Button 
-                 Content="+"
-                 Style="{DynamicResource RoundedButtonStyle}" 
-                 Margin="0"
-                 Background="#39688E"
-                 Foreground="White"
-                 FontFamily="Rubik-Medium"
-                 FontSize="30" Height="48" Width="26"
-                 Command="{Binding DataContext.AddProductCommand,RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
-                 CommandParameter="{Binding}"/>
+        <StackPanel  Margin="0,32,85,469" Orientation="Horizontal" HorizontalAlignment="Right" >
             <TextBox x:Name="searchTextBox" Margin="32,0,-28,0" 
                      Text="{Binding SearchText}"
                      Height="40" Width="0"
@@ -173,13 +163,22 @@
             <Button 
             Content="🔍"
             Style="{DynamicResource RoundedButtonStyle}" 
-            Margin="32,0,30,0"
+            Margin="32,0,35,0"
             DockPanel.Dock="Left"
             Command="{Binding SearchCommand}"
             Background="#39688E"
             Foreground="White"
             FontFamily="Rubik-Medium"
             FontSize="30" Height="48" Width="26"/>
+            <Button 
+                 Content="+"
+                 Style="{DynamicResource RoundedButtonStyle}"
+                 Background="#39688E"
+                 Foreground="White"
+                 FontFamily="Rubik-Medium"
+                 FontSize="30"
+                 Command="{Binding DataContext.AddProductCommand, RelativeSource={RelativeSource AncestorType={x:Type Window}}}"
+                 CommandParameter="{Binding}" Height="48" Width="26"/>
         </StackPanel>
     </Grid>
 </UserControl>

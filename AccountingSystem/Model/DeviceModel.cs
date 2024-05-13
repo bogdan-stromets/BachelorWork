@@ -19,7 +19,7 @@ namespace AccountingSystem.Model
         public decimal price { get; set; }
         public CategoryModel category { get; set; }
         public int stock_size { get; set; }
-        private string pictureURL { get; set; }
+        public string pictureURL { get; set; }
         public List<ManufacturerModel> manufacturerList { get; set; }
         public List<CategoryModel> categoryList { get; set; }
         
@@ -101,7 +101,11 @@ namespace AccountingSystem.Model
         }
         internal static string AddCommand(string name, string description,int manufacturer_id,decimal price,int category_id,string count, string pictureURL)
         {
-            return $"INSERT INTO `{TableName.devices}` (`id_device`, `name`, `description`, `id_manufacturer`, `price`, `id_category`, `amount`, `picture_url`) VALUES (NULL, '{name}', '{description}', '{manufacturer_id}', '{price}', '{category_id}', '{count}', '{pictureURL}');";
+            return $@"INSERT INTO `{TableName.devices}` (`id_device`, `name`, `description`, `id_manufacturer`, `price`, `id_category`, `amount`, `picture_url`) VALUES (NULL, '{name}', '{description}', '{manufacturer_id}', '{price}', '{category_id}', '{count}', '{pictureURL}');";
+        }
+        internal  string UpdateAllCommand(string name, string description, int manufacturer_id, decimal price, int category_id, string count, string pictureURL)
+        {
+            return $@"UPDATE `{TableName.devices}` SET `name` = '{name}', `description` = '{description}', `id_manufacturer` = '{manufacturer_id}', `price` = '{price}', `id_category` = '{category_id}', `amount` = '{count}', `picture_url` = '{pictureURL}' WHERE `devices`.`id_device` = {id};";
         }
         internal string GetUpdateCommand()
         {

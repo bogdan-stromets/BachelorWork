@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Input;
 using AccountingSystem.Model;
 using AccountingSystem.Utilities;
@@ -36,6 +37,7 @@ namespace AccountingSystem.ViewModel
         public ICommand ShipmentsCommand { get; set; }
         public ICommand SettingsCommand { get; set; }
         public ICommand AddProductCommand { get; set; }
+        public ICommand EditProductCommand { get; set; }
         public ICommand PrevPageCommand { get; set; }
 
         private void Home(object obj) => CurrentView = new HomeVM();
@@ -69,8 +71,13 @@ namespace AccountingSystem.ViewModel
         private void Statistics(object obj) => CurrentView = new StatisticsVM();
         private void Shipment(object obj) => CurrentView = new ShipmentVM();
         private void Setting(object obj) => CurrentView = new SettingVM();
-        private void PrevPage(object obj) => CurrentView = PrevView;
         private void AddProduct(object obj) => CurrentView = new AddingProductVM();
+        private void EditProduct(object obj)
+        {
+            PrevView = CurrentView;
+            CurrentView = new ChangeProductVM(); 
+        }
+        private void PrevPage(object obj) => CurrentView = PrevView;
         public NavigationVM()
         {
             HomeCommand = new RelayCommand(Home);
@@ -87,6 +94,7 @@ namespace AccountingSystem.ViewModel
             LeastProductCommand = new RelayCommand(LeastProductDetails);
             AddProductCommand = new RelayCommand(AddProduct);
             PrevPageCommand = new RelayCommand(PrevPage);
+            EditProductCommand = new RelayCommand(EditProduct);
             // Startup Page
             CurrentView = new HomeVM();
         }

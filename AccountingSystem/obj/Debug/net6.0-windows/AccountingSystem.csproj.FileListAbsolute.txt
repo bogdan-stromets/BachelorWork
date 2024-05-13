@@ -71,3 +71,5 @@ F:\Study\4 курс\Bachelor work\Project\AccountingSystem\BachelorWork\Accounti
 F:\Study\4 курс\Bachelor work\Project\AccountingSystem\BachelorWork\AccountingSystem\bin\Debug\net6.0-windows\OpenCvSharp.dll
 F:\Study\4 курс\Bachelor work\Project\AccountingSystem\BachelorWork\AccountingSystem\obj\Debug\net6.0-windows\View\AddingProduct.g.cs
 F:\Study\4 курс\Bachelor work\Project\AccountingSystem\BachelorWork\AccountingSystem\obj\Debug\net6.0-windows\View\AddingProduct.baml
+F:\Study\4 курс\Bachelor work\Project\AccountingSystem\BachelorWork\AccountingSystem\obj\Debug\net6.0-windows\View\ChangeProduct.g.cs
+F:\Study\4 курс\Bachelor work\Project\AccountingSystem\BachelorWork\AccountingSystem\obj\Debug\net6.0-windows\View\ChangeProduct.baml

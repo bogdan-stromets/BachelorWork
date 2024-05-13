@@ -7,6 +7,7 @@ using System.Linq;
 using System.Printing;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
 
@@ -126,8 +127,15 @@ namespace AccountingSystem.ViewModel
         }
         private void AddProduct(object obj)
         {
-            dB.ExecuteSQLCommand(DeviceModel.AddCommand(ProductName,ProductDescription,ProductManufacturer.id, Convert.ToDecimal(ProductPrice),ProductCategory.id,ProductCount,ProductPictureURL));
-
+            try
+            {
+                dB.ExecuteSQLCommand(DeviceModel.AddCommand(ProductName,ProductDescription,ProductManufacturer.id, Convert.ToDecimal(ProductPrice),ProductCategory.id,ProductCount,ProductPictureURL));
+                NavigationVM.ExecuteProductCommand();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Not all values are filled!","Error!",MessageBoxButton.OK,MessageBoxImage.Warning);
+            }
         }
     }
 }

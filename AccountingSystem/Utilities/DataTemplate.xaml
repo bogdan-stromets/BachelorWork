@@ -15,8 +15,13 @@
     <DataTemplate DataType="{x:Type vm:ProductVM}">
         <view:Products />
     </DataTemplate>
+   
     <DataTemplate DataType="{x:Type vm:AddingProductVM}">
         <view:AddingProduct />
+    </DataTemplate>       
+    
+    <DataTemplate DataType="{x:Type vm:ChangeProductVM}">
+        <view:ChangeProduct />
     </DataTemplate>    
     
     <DataTemplate DataType="{x:Type vm:ProductDetailsVM}">

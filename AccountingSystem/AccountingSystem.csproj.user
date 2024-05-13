@@ -13,6 +13,9 @@
     <Page Update="Styles\CheckBox.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="View\ChangeProduct.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\AddingProduct.xaml">
       <SubType>Designer</SubType>
     </Page>
