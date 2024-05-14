@@ -414,6 +414,10 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    
+
+
     <ImageBrush x:Key="close_app_def"
                 ImageSource="/Images/shutdown_def.png"
                 Stretch="None" />

@@ -13,52 +13,49 @@
         <vm:CustomerVM />
     </UserControl.DataContext>
     <!--// Check In/Out System in Future!! // -->
-        <Grid Margin="15" Background ="#212529">
-
-        <StackPanel Margin="32,59,491,105">
-            <!--// Photo //-->
-            <Ellipse Width="150" Height="150" Margin="50" HorizontalAlignment="Center">
-                <Ellipse.Fill>
-                    <ImageBrush ImageSource="{Binding Employeer.photoURL}" Stretch="UniformToFill"/>
-                </Ellipse.Fill>
-            </Ellipse>
-            <!--// Full Name //-->
-            <TextBlock Style="{StaticResource ResourceKey=Text_Style}" 
-                       Text="{Binding Employeer.fullName}"
-                       TextAlignment="Center"
+    <Grid Margin="15" Background ="#212529">
+        <TextBlock HorizontalAlignment="Left" Margin="72,32,0,0"
+                       TextWrapping="Wrap" Text="Employeer Profile" 
+                       VerticalAlignment="Top"
+                       Height="38" Width="Auto"
+                       FontSize="32" FontFamily="Rubik Medium"
+                       Foreground="White"/>
+        <!--// Photo //-->
+        <!--// Full Name //-->
+        <TextBlock Style="{StaticResource ResourceKey=Text_Style}" 
+                       Text="{Binding Employeer.fullName,StringFormat = Name: {0}}"
+                       TextAlignment="Left"
+                       FontSize="32"
+                       
+                       Margin="387,161,0,0"
+                       Width="Auto" Height="40" VerticalAlignment="Top"/>
+        <!--// Position //-->
+        <TextBlock Style="{StaticResource ResourceKey=Text_Style}" 
+                       Text="{Binding Employeer.position,StringFormat = Position: {0}}"
+                       TextAlignment="Left"
                        FontSize="27"
-                       HorizontalAlignment="Center"
-                       Margin="-20"
-                       Width="387" Height="40"/>
-            <!--// Position //-->
-            <TextBlock Style="{StaticResource ResourceKey=Text_Style}" 
-                       Text="{Binding Employeer.position}"
-                       TextAlignment="Center"
-                       FontSize="20"
-                       HorizontalAlignment="Center"
-                       Margin="40"
-                       Width="387" Height="40"/>
-            <!--// Salary //-->
-            <TextBlock Style="{StaticResource ResourceKey=Text_Style}" 
+                       Margin="387,223,0,0"
+                       Width="388" Height="40" VerticalAlignment="Top"/>
+        <!--// Salary //-->
+        <TextBlock Style="{StaticResource ResourceKey=Text_Style}" 
                        Text="{Binding Employeer.salary,StringFormat=Salary: {0} грн}"
-                       TextAlignment="Center"
-                       FontSize="20"
-                       HorizontalAlignment="Center"
-                       Margin="-20"
-                       Width="387" Height="40"/>
-        </StackPanel>
+                       TextAlignment="Left"
+                       FontSize="27"
+                       Margin="668,446,0,0"
+                       Width="388" Height="40" VerticalAlignment="Top"/>
+
         <!--// Email //-->
         <TextBlock Style="{StaticResource ResourceKey=Text_Style}" 
                        Text="{Binding Employeer.email,StringFormat=Email: {0}}"
                        TextAlignment="Center"
                        FontSize="20"
-                       Margin="482,296,0,0"
+                       Margin="18,411,0,0"
                        Width="387" Height="40" VerticalAlignment="Top"/>
         <TextBlock Style="{StaticResource ResourceKey=Text_Style}" 
                        Text="Contacts"
                        TextAlignment="Center"
                        FontSize="20"
-                       Margin="482,256,0,0"
+                       Margin="18,371,0,0"
                        Width="387" Height="40" VerticalAlignment="Top"/>
         <!--// Phone Number //-->
         <TextBlock Style="{StaticResource ResourceKey=Text_Style}" 
@@ -66,7 +63,12 @@
                        TextAlignment="Center"
                        FontSize="20"
                        HorizontalAlignment="Right"
-                       Margin="0,341,51,0"
+                       Margin="0,456,515,0"
                        Width="387" Height="40" VerticalAlignment="Top"/>
+        <Ellipse Width="216" Margin="104,108,0,248" HorizontalAlignment="Left">
+            <Ellipse.Fill>
+                <ImageBrush ImageSource="{Binding Employeer.photoURL}" Stretch="UniformToFill"/>
+            </Ellipse.Fill>
+        </Ellipse>
     </Grid>
 </UserControl>

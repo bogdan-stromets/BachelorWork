@@ -31,5 +31,6 @@ namespace AccountingSystem.Model
             phone_number = dr.ItemArray[8].ToString();
             salary = int.Parse(dr.ItemArray[9].ToString());
         }
+
     }
 }

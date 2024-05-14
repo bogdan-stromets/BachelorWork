@@ -6,13 +6,88 @@
              xmlns:local="clr-namespace:AccountingSystem.View"
              mc:Ignorable="d"
              d:DesignHeight="600"
-             d:DesignWidth="622">
+             d:DesignWidth="962">
+    <UserControl.Resources>
+        <Style x:Key="HexagonButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="White"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Path x:Name="hexagon" Stroke="{TemplateBinding BorderBrush}" Width="48" Height="55" StrokeThickness="3">
+                                <Path.Fill>
+                                    <SolidColorBrush Color="White"/>
+                                </Path.Fill>
+                                <Path.Data>
+                                    <PathGeometry>
+                                        <PathFigure StartPoint="24,1">
+                                            <PolyLineSegment Points="46,13 46,41 24,53 2,41 2,13"/>
+                                        </PathFigure>
+                                    </PathGeometry>
+                                </Path.Data>
+                            </Path>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetName="hexagon"
+                                                    Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)"
+                                                    To="#FFFFFFFF" Duration="0:0:0.2"/>
+                                            <ColorAnimation Storyboard.TargetName="hexagon"
+                                                    Storyboard.TargetProperty="(Path.Stroke).(SolidColorBrush.Color)"
+                                                    To="#EAB01E" Duration="0:0:0.2"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetName="hexagon"
+                                                    Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)"
+                                                    To="#FFFFFFFF" Duration="0:0:0.2"/>
+                                            <ColorAnimation Storyboard.TargetName="hexagon"
+                                                    Storyboard.TargetProperty="(Path.Stroke).(SolidColorBrush.Color)"
+                                                    To="White" Duration="0:0:3.2"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
 
-    <Grid>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="hexagon" Property="Fill" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter TargetName="hexagon" Property="Stroke" Value="#FFA0522D"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid Background="#212529" Margin="0,0,-16,0">
 
         <Border CornerRadius="0,20,20,0" Margin="0,5,5,0">
-
         </Border>
-
+        <Grid/>
+        <Button Style="{DynamicResource HexagonButtonStyle}" Margin="276,263,638,281"/>
+        <Button Style="{DynamicResource HexagonButtonStyle}" Margin="326,262,584,282"/>
+        <Button Style="{DynamicResource HexagonButtonStyle}" Margin="301,308,611,236"/>
+        <Button Style="{DynamicResource HexagonButtonStyle}" Margin="301,216,609,328"/>
+        <Button Style="{DynamicResource HexagonButtonStyle}" Margin="353,216,559,328"/>
+        <Button Style="{DynamicResource HexagonButtonStyle}" Margin="375,260,532,281"/>
+        <Button Style="{DynamicResource HexagonButtonStyle}" Margin="404,216,510,328"/>
+        <Button Style="{DynamicResource HexagonButtonStyle}" Margin="378,171,532,373"/>
+        <TextBlock 
+            Text="Accounting System"
+            Foreground="White"
+            FontFamily="Rubik-Medium"
+            TextWrapping="Wrap"
+            FontSize ="45" Margin="478,216,248,216"
+            />
     </Grid>
 </UserControl>
