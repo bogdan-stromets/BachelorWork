@@ -37,10 +37,10 @@
                                         <Storyboard>
                                             <ColorAnimation Storyboard.TargetName="hexagon"
                                                     Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)"
-                                                    To="#569CD6" Duration="0:0:0.2"/>
+                                                    To="#EAB01E" Duration="0:0:0.2"/>
                                             <ColorAnimation Storyboard.TargetName="hexagon"
                                                     Storyboard.TargetProperty="(Path.Stroke).(SolidColorBrush.Color)"
-                                                    To="#EAB01E" Duration="0:0:0.2"/>
+                                                    To="#569CD6" Duration="0:0:0.2"/>
                                         </Storyboard>
                                     </BeginStoryboard>
                                 </Trigger.EnterActions>
@@ -49,7 +49,7 @@
                                         <Storyboard>
                                             <ColorAnimation Storyboard.TargetName="hexagon"
                                                     Storyboard.TargetProperty="(Path.Fill).(SolidColorBrush.Color)"
-                                                    To="#FFFFFFFF" Duration="0:0:0.2"/>
+                                                    To="#FFFFFFFF" Duration="0:0:3.2"/>
                                             <ColorAnimation Storyboard.TargetName="hexagon"
                                                     Storyboard.TargetProperty="(Path.Stroke).(SolidColorBrush.Color)"
                                                     To="White" Duration="0:0:3.2"/>

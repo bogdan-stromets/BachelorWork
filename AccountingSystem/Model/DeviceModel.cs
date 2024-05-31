@@ -22,6 +22,26 @@ namespace AccountingSystem.Model
         public string pictureURL { get; set; }
         public List<ManufacturerModel> manufacturerList { get; set; }
         public List<CategoryModel> categoryList { get; set; }
+        public decimal totalCost { get => price * stock_size; }
+        public string tipText { get; set; }
+        public BitmapImage attentionImage 
+        {
+            get
+            {
+                if (stock_size < 20)
+                {
+                    tipText = "Understock!";
+                    return new BitmapImage(new Uri(@"pack://application:,,,/Images/attention.png"));
+                }
+                else if (stock_size > 500) 
+                {
+                    tipText = "Overstock!";
+                    return new BitmapImage(new Uri(@"pack://application:,,,/Images/attention.png"));
+                }
+                tipText = string.Empty;
+                return null;
+            }
+        }
         
         public BitmapImage picture { get; set; }
         private DB dB;
